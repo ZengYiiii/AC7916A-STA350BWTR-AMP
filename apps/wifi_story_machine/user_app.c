@@ -261,50 +261,59 @@ static void ble_sound_tuner_command_parse(const uint8_t *packet, uint16_t size)
     }
 }
 
+/* 音频输出走 iis0 -> 外置功放 STA350BW, 不经过芯片 DAC, 因此 SDK 的 DAC/数字音量
+ * 对最终响度无效。最终响度的唯一旋钮是功放 MVOL 主音量, 故手机音量(0~100)直接
+ * 映射到功放 MVOL。兼容两类手机: 支持 AVRCP 绝对音量的手机滑条精准对应; 不支持的
+ * 手机由协议栈按步进逻辑给出递增/递减后的 vol, 走同一入口, 无需两套逻辑。
+ * user_amp_volume 记录最近一次设置的功放音量, 供连接时与手机滑条同步。 */
+static uint8_t user_amp_volume = STA350BW_INIT_VOLUME;
+
+/* 统一的功放音量落地: 钳位到 0~100, 写 MVOL, 并记录当前值供同步查询。
+ * vol=0 时 STA350BW_SetVolume 内部会写 0xFF 真静音。 */
+static void user_amp_set_volume(int volume)
+{
+    if (volume < 0)
+    {
+        volume = 0;
+    }
+    if (volume > 100)
+    {
+        volume = 100;
+    }
+
+    if (!STA350BW.initialized)
+    {
+        /* 功放还没初始化好: 只记录目标值, 等 probe 成功后由落地函数写入 */
+        user_amp_volume = (uint8_t)volume;
+        LOGD("amp not ready, cache volume:%d", volume);
+        return;
+    }
+
+    if (STA350BW_SetVolume(STA350BW_CHANNEL_MASTER, (uint8_t)volume) != RET_STATUS_OK)
+    {
+        LOGE("功放音量设置失败:%d", volume);
+        return;
+    }
+    user_amp_volume = (uint8_t)volume;
+    LOGI("功放音量设置成功:%d", volume);
+}
+
+/* 供外部(如连接同步)查询当前功放音量(0~100) */
+int user_amp_get_volume(void)
+{
+    return user_amp_volume;
+}
+
 void BT_MUSIC_VOLUME_Event(int volume)
 {
-    int32_t ret = RET_STATUS_OK;
     LOGD("BT_MUSIC_VOLUME_Event:%d", volume);
-    if (STA350BW.initialized)
-    {
-        /*设置主音量*/
-        ret = STA350BW_SetVolume(STA350BW_CHANNEL_MASTER, volume);
-        if (ret != RET_STATUS_OK)
-        {
-            LOGE("设置音量失败:%X", ret);
-        }
-        else
-        {
-            LOGI("设置音量成功:%d", volume);
-        }
-    }
-    else
-    {
-        LOGE("STA350BW未初始化");
-    }
+    user_amp_set_volume(volume);
 }
 
 void USB_MUSIC_VOLUME_Event(int volume)
 {
-    int32_t ret = RET_STATUS_OK;
     LOGD("USB_MUSIC_VOLUME_Event:%d", volume);
-    if (STA350BW.initialized)
-    {
-        /*设置主音量*/
-        ret = STA350BW_SetVolume(STA350BW_CHANNEL_MASTER, volume);
-        if (ret != RET_STATUS_OK)
-        {
-            LOGE("设置音量失败:%X", ret);
-        }
-        else
-        {
-            LOGI("设置音量成功:%d", volume);
-        }
-    }
-    else
-    {
-        LOGE("STA350BW未初始化");
-    }
+    user_amp_set_volume(volume);
 }
 
 /* ----------------------------------------------------------------------------*/
@@ -536,6 +545,39 @@ static void STA350BW_I2C_SelfCheck(void)
 }
 
 /**
+ * @brief  功放 init 成功后的统一"落地"动作: 解除静音 + 写入功放默认音量 + 恢复 EQ。
+ *         无论是开机首次 probe 成功, 还是后来(播放时 MCLK 稳定才)重试成功, 都必须
+ *         调用本函数, 否则会出现"PLL 锁上了但音量/unmute 没写进芯片 -> 依然没声"。
+ *         设计约定: 音频走 iis0 外接功放, 不经 DAC, 最终响度只由功放 MVOL 决定。
+ *         手机音量直接映射到功放 MVOL(见 BT_MUSIC_VOLUME_Event), 这里用 user_amp_volume
+ *         (最近一次的目标音量, 默认 STA350BW_INIT_VOLUME)落地, 保证 probe 成功瞬间
+ *         功放音量与已知目标一致, 不会出现"刚出声就满音量"。
+ */
+static void user_amp_apply_after_init(void)
+{
+    if (!STA350BW.initialized)
+    {
+        return;
+    }
+
+    /* 1) 解除全通道静音 */
+    STA350BW_SetMute(STA350BW_MUTE_ALL_MASK, STA350BW_DISABLE);
+
+    /* 2) 写入当前目标音量(开机=默认档, 若手机已调过则为最新值) */
+    if (STA350BW_SetVolume(STA350BW_CHANNEL_MASTER, user_amp_volume) != RET_STATUS_OK)
+    {
+        LOGE("user_amp_apply_after_init: set volume %d 失败", user_amp_volume);
+    }
+    else
+    {
+        LOGI("user_amp_apply_after_init: unmute + volume=%d OK", user_amp_volume);
+    }
+
+    /* 3) 应用默认 EQ 预设: 低音增强3(BASS_BOOST3) */
+    Switch_Demo(BIQUAD_TYPE_BASS_BOOST3);
+}
+
+/**
  * @brief  Register Bus IOs if component ID is OK
  * @retval error status
  */
@@ -606,13 +648,15 @@ static int32_t STA350BW_Probe(void)
     else
     {
         LOGI("STA350BW init OK addr=0x%X fs=%u", STA350BW.i2c_address, init_fs);
-        STA350BW_SetMute(STA350BW_MUTE_ALL_MASK, STA350BW_DISABLE);
         if (init_fs != 0)
         {
             user_eq_fs = init_fs;
         }
         ret = RET_STATUS_OK;
         STA350BW.initialized = 1;
+        /* PLL 锁定、init 成功的瞬间立即落地: 解除静音 + 写当前音量 + 恢复 EQ。
+         * 关键: 无论开机首次成功还是播放时重试成功, 都在这里把声音配置写进芯片。 */
+        user_amp_apply_after_init();
     }
     return ret;
 }
@@ -658,26 +702,28 @@ static void UserAudioDeviceTaskEntrance(void *pvParameter)
     LOGW("USB resumed, sound card enabled");
 #endif
 
-    if (STA350BW.initialized)
-    {
-        // Switch_Demo(BIQUAD_TYPE_DANCE);
-    }
+    /* 开机首次 probe 若已成功, user_amp_apply_after_init() 已在 probe 内完成落地,
+     * 这里无需重复处理。下面的 while 负责"开机没锁上 PLL"时持续重试。 */
     while (1)
     {
         if (!STA350BW.initialized)
         {
+            /* 方案A: 开机阶段 IIS0 时钟刚常驻、PLL 可能还没稳, 此时 probe 易失败。
+             * 真正播放音乐后 IIS0 数据流在跑、MCLK 绝对稳定, 这里持续重试必能锁上;
+             * 一旦成功, probe 内部的 user_amp_apply_after_init() 会立即把音量/unmute/EQ
+             * 写进芯片, 声音随即出来。重试间隔收紧到 0.5s, 让播放后尽快补声。 */
             ret = STA350BW_Probe();
             if (ret != RET_STATUS_OK)
             {
-                LOGE("STA350BW_Probe ERROR:0x%X", ret);
+                LOGE("STA350BW_Probe retry ERROR:0x%X", ret);
             }
             else
             {
-                LOGI("STA350BW_Probe OK");
+                LOGI("STA350BW_Probe retry OK (PLL locked, sound applied)");
             }
         }
-        // 暂停一段时间2000
-        os_time_dly(200);
+        /* 0.5s 一轮: 未初始化时快速重试补声; 已初始化后这只是低频空转, 开销可忽略 */
+        os_time_dly(50);
     }
 }
 

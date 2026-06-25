@@ -87,6 +87,7 @@
 					<Add directory="../../../../apps" />
 					<Add directory="../../../../apps/wifi_story_machine" />
 					<Add directory="../../../../apps/wifi_story_machine/include" />
+					<Add directory="../../../../apps/wifi_story_machine/sta350bw" />
 					<Add directory="../../../../apps/wifi_story_machine/board/wl82" />
 					<Add directory="../../../../apps/common" />
 					<Add directory="../../../../apps/common/include" />
@@ -1259,6 +1260,18 @@
 		</Unit>
 		<Unit filename="../../../common/usb/usb_std_class_def.h" />
 		<Unit filename="../../app_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../user_app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sta350bw/sta350bw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sta350bw/BiquadCalculator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sta350bw/BiquadPresets.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../app_music.c">

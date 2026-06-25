@@ -236,6 +236,9 @@ static void bt_set_music_device_volume(int volume)
     evt.value = volume;
     bt_event_notify(BT_EVENT_FROM_USER, &evt);
 
+    /* 音频输出走 iis0 -> 外置功放 STA350BW, 不经过芯片 DAC, 故 SDK 的 DAC/数字音量
+     * 对最终响度无效。手机音量(已归一到 0~100, 兼容 AVRCP 绝对音量与步进两种手机)
+     * 统一映射到功放 MVOL 主音量, 由用户层 BT_MUSIC_VOLUME_Event 落地。 */
     BT_MUSIC_VOLUME_Event(volume);
 }
 
@@ -301,10 +304,16 @@ static void bt_music_player_time_timer_deal(u8 en)
     }
 }
 
+/* 返回功放当前音量(0~100), 定义见 user_app.c。用于连接时与手机滑条同步,
+ * 保证手机显示的音量位置与功放实际响度一致。 */
+extern int user_amp_get_volume(void);
+
 static int phone_get_device_vol(void)
 {
-    log_info("bt music get volume");
-    return get_app_music_volume() * 127 / 100;
+    /* 用功放实际音量(而非仅存储的 app 音量)回传, 两类手机连接时滑条都能对齐 */
+    int vol = user_amp_get_volume();
+    log_info("bt music get volume : %d", vol);
+    return vol * 127 / 100;
 }
 
 static void phone_sync_vol(u8 volume)

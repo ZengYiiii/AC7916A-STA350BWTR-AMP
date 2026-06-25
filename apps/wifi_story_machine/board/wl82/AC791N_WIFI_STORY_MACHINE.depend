@@ -12530,7 +12530,7 @@
 	"asm/rf_coexistence_config.h"
 	"event/key_event.h"
 
-1766133617 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\bt_ble\bt_music.c
+1782401732 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\bt_ble\bt_music.c
 	"system/app_core.h"
 	"server/server_core.h"
 	"server/audio_server.h"
@@ -12895,4 +12895,71 @@
 	"ui/include/ui_api.h"
 	"lte_module/lte_module.h"
 	"wifi/wifi_connect.h"
+
+1713707302 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\biquadcalculator.c
+	"BiquadCalculator.h"
+
+1713707309 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\biquadcalculator.h
+	"stdint.h"
+	"math.h"
+
+1714563496 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\biquadpresets.c
+	"BiquadPresets.h"
+
+1714559211 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\biquadpresets.h
+	"stdint.h"
+
+1781444599 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.c
+	"sta350bw.h"
+
+1713709444 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.h
+	<stdint.h>
+	"debug.h"
+	"user_app.h"
+	"BiquadCalculator.h"
+	"BiquadPresets.h"
+
+1713696361 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\user_app.h
+	<string.h>
+	<stdlib.h>
+	"user_status.h"
+	"system/includes.h"
+	"os/os_api.h"
+	"system/task.h"
+	"system/init.h"
+	"asm/cpu.h"
+	"spp_user.h"
+	"bt_common.h"
+	"btstack/avctp_user.h"
+	"system/timer.h"
+	"system/sys_time.h"
+	"app_config.h"
+	"debug.h"
+	"timer.h"
+	"device/device.h"
+	"asm/spi.h"
+	"device/gpio.h"
+	"asm/pwm.h"
+	"device/iic.h"
+	"asm/iic.h"
+	"asm/clock.h"
+	"fs/fs.h"
+	"asm/sfc_norflash_api.h"
+	"syscfg/syscfg_id.h"
+
+1710234149 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\user_status.h
+	<stdint.h>
+
+1713510766 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\include_lib\btstack\third_party\common\spp_user.h
+	"typedef.h"
+
+1782401803 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\user_app.c
+	"user_app.h"
+	"sta350bw.h"
+	"le_trans_data.h"
+	"eq_protocol.h"
+	<stdlib.h>
+	<string.h>
+
+1781429992 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\eq_protocol.h
 
