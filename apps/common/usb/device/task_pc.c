@@ -283,6 +283,16 @@ void usb_start(const usb_dev usbfd)
     hid_set_report_desc(usbfd, hid_pos_get_report_desc(), hid_pos_get_report_desc_size());
     hid_set_output_handle(usbfd, hid_pos_receive);
     hid_pos_open(usbfd);
+#elif defined TCFG_EQ_USB_HID_ENABLE && TCFG_EQ_USB_HID_ENABLE
+    /* wifi_story_machine: 自定义 vendor HID, 作 STA350BW EQ 实时调节通道 */
+    {
+        extern const unsigned char *eq_usb_hid_report_desc(unsigned int *out_len);
+        extern int eq_usb_hid_output(unsigned char *buf, unsigned int len);
+        unsigned int eq_rp_len = 0;
+        const unsigned char *eq_rp = eq_usb_hid_report_desc(&eq_rp_len);
+        hid_set_report_desc(usbfd, eq_rp, eq_rp_len);
+        hid_set_output_handle(usbfd, eq_usb_hid_output);
+    }
 #endif
     hid_control(usbfd, 1);
 #endif

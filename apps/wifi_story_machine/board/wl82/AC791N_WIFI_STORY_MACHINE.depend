@@ -9058,7 +9058,7 @@
 1713510766 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\include_lib\system\boot.h
 	"asm/cpu.h"
 
-1766385452 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\app_config.h
+1782407956 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\app_config.h
 	"board_config.h"
 	"usb_std_class_def.h"
 	"usb_common_def.h"
@@ -9071,7 +9071,7 @@
 	"board_7916A_dev_kit_cfg.h"
 	"board_7916A_develop_cfg.h"
 
-1713678260 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\board\wl82\board_7916a_dev_kit_cfg.h
+1782440046 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\board\wl82\board_7916a_dev_kit_cfg.h
 	"app_config.h"
 
 1713513833 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\board\wl82\board_7916a_develop_cfg.h
@@ -12007,7 +12007,7 @@
 	"asm/wdt.h"
 	"generic/log.h"
 
-1713510763 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\common\usb\device\task_pc.c
+1782407942 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\common\usb\device\task_pc.c
 	"system/app_core.h"
 	"system/includes.h"
 	"server/server_core.h"
@@ -12530,7 +12530,7 @@
 	"asm/rf_coexistence_config.h"
 	"event/key_event.h"
 
-1782401732 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\bt_ble\bt_music.c
+1782403267 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\bt_ble\bt_music.c
 	"system/app_core.h"
 	"server/server_core.h"
 	"server/audio_server.h"
@@ -12909,10 +12909,10 @@
 1714559211 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\biquadpresets.h
 	"stdint.h"
 
-1781444599 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.c
+1782407674 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.c
 	"sta350bw.h"
 
-1713709444 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.h
+1782407654 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\sta350bw\sta350bw.h
 	<stdint.h>
 	"debug.h"
 	"user_app.h"
@@ -12953,13 +12953,21 @@
 1713510766 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\include_lib\btstack\third_party\common\spp_user.h
 	"typedef.h"
 
-1782401803 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\user_app.c
+1782407635 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\user_app.c
 	"user_app.h"
 	"sta350bw.h"
-	"le_trans_data.h"
-	"eq_protocol.h"
+	"eq_usb_hid.h"
 	<stdlib.h>
 	<string.h>
 
 1781429992 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\include\eq_protocol.h
+
+1782410464 source:d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\eq_usb_hid.c
+	"eq_usb_hid.h"
+	"user_app.h"
+	"sta350bw.h"
+	<string.h>
+
+1782410342 d:\workspace\jl_workspace\i2s_amp_ac79_aiot_sdk\apps\wifi_story_machine\eq_usb_hid.h
+	<stdint.h>
 

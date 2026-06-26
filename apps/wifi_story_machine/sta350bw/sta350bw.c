@@ -420,6 +420,18 @@ int32_t STA350BW_SetEq(uint8_t ramBlock,
   return STA350BW_OK;
 }
 
+/* 按绝对 RAM 地址写一组 biquad 系数。BQ5~BQ7 的起始地址(0x20/0x25/0x2A)不是
+ * filterNumber*5 的整数倍, 不能用 STA350BW_SetEq, 故提供本接口直接传 RAM 地址。 */
+int32_t STA350BW_SetEqRaw(uint8_t ramBlock,
+                          uint8_t ramAddr, uint32_t *filterValues)
+{
+  if (writeRAMSet(ramBlock, ramAddr, (uint8_t *)filterValues) != 0)
+  {
+    return STA350BW_ERROR;
+  }
+  return STA350BW_OK;
+}
+
 /**
  *@brief 重置设备。
  *@param pObj：与当前设备实例相关的对象。

@@ -1002,6 +1002,9 @@ extern "C"
   int32_t STA350BW_Stop(void);
   int32_t STA350BW_Reset(void);
   int32_t STA350BW_SetEq(uint8_t ramBlock, uint8_t filterNumber, uint32_t *filterValues);
+  /* 按绝对 RAM 地址写一组 biquad 系数(5个)。用于 BQ5~BQ7 这类起始地址
+   * (0x20/0x25/0x2A)不是 filterNumber*5 整数倍的扩展 biquad。见数据手册 Table71/8.18.5。 */
+  int32_t STA350BW_SetEqRaw(uint8_t ramBlock, uint8_t ramAddr, uint32_t *filterValues);
   int32_t STA350BW_SetTone(uint8_t toneGain);
   int32_t STA350BW_SetDSPOption(uint8_t option, uint8_t state);
 

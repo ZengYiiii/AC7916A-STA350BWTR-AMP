@@ -43,7 +43,6 @@
 					<Add option="-DCONFIG_JLFAT_ENABLE" />
 					<Add option="-DCONFIG_RTOS_AND_MM_LIB_CODE_SECTION_IN_SDRAM" />
 					<Add option="-DCONFIG_VIDEO_ENABLE=1" />
-					<Add option="-DCONFIG_NET_ENABLE=1" />
 					<Add option="-DCONFIG_BT_ENABLE=1" />
 					<Add option="-DEVENT_HANDLER_NUM_CONFIG=2" />
 					<Add option="-DEVENT_TOUCH_ENABLE_CONFIG=0" />
@@ -1263,6 +1262,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../user_app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../eq_usb_hid.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../sta350bw/sta350bw.c">

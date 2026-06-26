@@ -461,22 +461,18 @@
 //*********************************************************************************//
 //                                  USB配置                                        //
 //*********************************************************************************//
+/* USB 用作 EQ 调节通道(自定义 vendor HID), 不再作 U盘/声卡。
+ * 见 eq_usb_hid.c / task_pc.c 的 HID 描述符与收发注册。 */
 #ifndef TCFG_PC_ENABLE
-#if TCFG_EQ_ONLINE_ENABLE && defined EQ_CORE_V1
 #define TCFG_PC_ENABLE                      1     //使用USB从机功能一定要打开
-#else
-#define TCFG_PC_ENABLE                      0     //使用USB从机功能一定要打开
-#endif
 #endif
 #define USB_PC_NO_APP_MODE                  2
 #define USB_MALLOC_ENABLE                   1
 #ifndef USB_DEVICE_CLASS_CONFIG
-#if TCFG_EQ_ONLINE_ENABLE && defined EQ_CORE_V1
-#define USB_DEVICE_CLASS_CONFIG             (CDC_CLASS)
-#else
-#define USB_DEVICE_CLASS_CONFIG             (MASSSTORAGE_CLASS)
+#define USB_DEVICE_CLASS_CONFIG             (HID_CLASS)  //自定义HID, 用于PC实时调EQ
 #endif
-#endif
+/* 启用自定义 EQ vendor HID(在 task_pc.c 注册描述符与收发回调, 见 eq_usb_hid.c) */
+#define TCFG_EQ_USB_HID_ENABLE              1
 #ifndef TCFG_UDISK_ENABLE
 #define TCFG_UDISK_ENABLE                   0     //U盘主机功能
 #endif
@@ -588,7 +584,7 @@
 #define TCFG_BD_NUM                               1     //可连接设备数量，可支持同时连接2台设备
 #define TCFG_USER_BT_CLASSIC_ENABLE               1     //经典蓝牙功能
 #define TCFG_USER_TWS_ENABLE                      0     //tws功能使能
-#define TCFG_USER_BLE_ENABLE                      1     //BLE功能使能
+#define TCFG_USER_BLE_ENABLE                      0     //BLE功能使能(已关闭: EQ改用USB HID调节, A2DP/配网不依赖BLE)
 #define TCFG_USER_EDR_ENABLE                      0     //EDR用户自定义协议功能
 #if __FLASH_SIZE__ > (1 * 1024 * 1024)
 #define TCFG_USER_EMITTER_ENABLE                  1     //蓝牙发射功能

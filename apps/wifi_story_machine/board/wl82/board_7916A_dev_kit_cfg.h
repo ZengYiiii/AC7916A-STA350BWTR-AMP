@@ -80,21 +80,11 @@
 //*********************************************************************************//
 #define TCFG_PC_ENABLE                      1     //使用USB从机功能一定要打开
 
-#if defined CONFIG_VIDEO_ENABLE
-#define USB_DEVICE_CLASS_CONFIG             (UVC_CLASS | SPEAKER_CLASS | CDC_CLASS)
-#define USB_DEVICE_CLASS_CONFIG_2_0         (MASSSTORAGE_CLASS | UVC_CLASS | HID_CLASS | AUDIO_CLASS)
-
-#else
-
-#if (TCFG_EQ_ONLINE_ENABLE == 1)
-#define USB_DEVICE_CLASS_CONFIG             CDC_CLASS
-#define USB_DEVICE_CLASS_CONFIG_2_0         (MASSSTORAGE_CLASS | HID_CLASS | AUDIO_CLASS)
-#else
-#define USB_DEVICE_CLASS_CONFIG             (SPEAKER_CLASS | CDC_CLASS)
-#define USB_DEVICE_CLASS_CONFIG_2_0         (MASSSTORAGE_CLASS | HID_CLASS | AUDIO_CLASS)
-#endif /* TCFG_EQ_ONLINE_ENABLE */
-
-#endif
+/* USB 作 STA350BW EQ 调节通道: 强制枚举为自定义 vendor HID(见 eq_usb_hid.c)。
+ * 不再用 UVC/SPEAKER/CDC/MSD。USB1.1 与 USB2.0(高速)两种模式都用 HID, 否则
+ * 高速模式会走 _2_0 配置导致枚举成别的 class。 */
+#define USB_DEVICE_CLASS_CONFIG             (HID_CLASS)
+#define USB_DEVICE_CLASS_CONFIG_2_0         (HID_CLASS)
 #define TCFG_UDISK_ENABLE                   0//FIXME:1     //U盘主机功能
 #define TCFG_HOST_AUDIO_ENABLE              0//FIXME:1     //uac主机功能，用户需要自己补充uac_host_demo.c里面的两个函数
 #if defined CONFIG_VIDEO_ENABLE && !defined TCFG_HOST_UVC_ENABLE

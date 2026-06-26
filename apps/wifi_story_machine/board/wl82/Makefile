@@ -346,6 +346,7 @@ c_SRC_FILES := \
 	../../../../apps/wifi_story_machine/sta350bw/BiquadCalculator.c \
 	../../../../apps/wifi_story_machine/sta350bw/BiquadPresets.c \
 	../../../../apps/wifi_story_machine/user_app.c \
+	../../../../apps/wifi_story_machine/eq_usb_hid.c \
 	../../../../apps/common/config/ci_transport_uart.c \
 
 # 需要编译的 .S 文件

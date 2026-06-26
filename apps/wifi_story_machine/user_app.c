@@ -1,7 +1,6 @@
 #include "user_app.h"
 #include "sta350bw.h"
-#include "le_trans_data.h"
-#include "eq_protocol.h"
+#include "eq_usb_hid.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -12,8 +11,8 @@
 #define STA350BW_INIT_VOLUME 80
 #define STA350BW_MUTE_ALL_MASK 0x0F
 
-/* 开机 USB 烧录窗口: 上电后先挂起 USB(不枚举成声卡), 延迟一段时间给烧录工具
- * 抢占 USB 下载口的机会, 之后再恢复 USB 声卡功能。0 可关闭此功能。 */
+/* 开机 USB 烧录窗口: 上电后先挂起 USB(不枚举成HID), 延迟一段时间给烧录工具
+ * 抢占 USB 下载口的机会, 之后再恢复 USB(HID 调音通道)。0 可关闭此功能。 */
 #define USB_DOWNLOAD_WINDOW_MS 3000
 
 void *AudioDrvI2C_Handle = NULL;
@@ -22,244 +21,16 @@ void *AudioDrvI2C_Handle = NULL;
 extern void board_iis0_clk_keep_on(void);
 
 static STA350BW_ctx_t STA350BW = {0};
-extern uint32_t USER_1_EQ_PRESET[];
-extern uint32_t USER_2_EQ_PRESET[];
-extern uint32_t USER_3_EQ_PRESET[];
 
-#define USER_EQ_BAND_COUNT 4
-#define BLE_CMD_MAX_LEN 96
-#define USER_EQ_GAIN_MIN_TENTH_DB (-120)
-#define USER_EQ_GAIN_MAX_TENTH_DB (120)
+/* 导出功放上下文给 eq_usb_hid 模块, 供其写 EQ 寄存器/判断 initialized。 */
+STA350BW_ctx_t *user_amp_get_ctx(void)
+{
+    return &STA350BW;
+}
 
-static const uint16_t user_eq_freqs[USER_EQ_BAND_COUNT] = {125, 500, 2000, 8000};
-static const float user_eq_q = 1.0f;
-static const uint32_t user_eq_flat_bq[5] = {0x000000, 0x000000, 0x000000, 0x000000, 0x400000};
-static uint32_t user_eq_coeffs[USER_EQ_BAND_COUNT][5];
-static uint8_t user_eq_ready = 0;
-static uint32_t user_eq_fs = STA350BW_Fs_44100;
-/* 当前 EQ 状态(供 QUERY 回传): 4 段增益(0.1dB) + 当前预设 id */
-static int8_t user_eq_cur_gains[USER_EQ_BAND_COUNT] = {0, 0, 0, 0};
-static uint8_t user_eq_cur_preset = BIQUAD_TYPE_FLAT;
-/* 经 ae3c 通知回传 EQ 状态, 定义见 le_trans_data.c */
-extern int eq_notify_send(const unsigned char *data, unsigned short len);
 /*******************************************************************************
 Static Functions
 *******************************************************************************/
-
-static int user_eq_clamp_gain(int gain_tenths)
-{
-    if (gain_tenths < USER_EQ_GAIN_MIN_TENTH_DB)
-    {
-        return USER_EQ_GAIN_MIN_TENTH_DB;
-    }
-    if (gain_tenths > USER_EQ_GAIN_MAX_TENTH_DB)
-    {
-        return USER_EQ_GAIN_MAX_TENTH_DB;
-    }
-    return gain_tenths;
-}
-
-static void user_eq_update_band(uint8_t band, float gain_db)
-{
-    BIQUAD_Filter_t filter;
-
-    if (!STA350BW.initialized || band >= USER_EQ_BAND_COUNT)
-    {
-        return;
-    }
-
-    memset(&filter, 0, sizeof(filter));
-    filter.Type = BIQUAD_CALCULATOR_PEAK;
-    filter.Fs = user_eq_fs;
-    filter.Fc = user_eq_freqs[band];
-    filter.Q = user_eq_q;
-    filter.Slope = 0.0f;
-    filter.Gain = gain_db;
-
-    if (BQ_CALC_ComputeFilter(&filter) < 0)
-    {
-        LOGE("user_eq_update_band: calc fail band=%d gain=%.1f", band, gain_db);
-        return;
-    }
-
-    memcpy(user_eq_coeffs[band], filter.Coefficients, sizeof(filter.Coefficients));
-
-    STA350BW_SetDSPOption(STA350BW_C1EQBP, STA350BW_DISABLE);
-    STA350BW_SetDSPOption(STA350BW_C2EQBP, STA350BW_DISABLE);
-    STA350BW_SetEq(STA350BW_RAM_BANK_SECOND, (uint8_t)(STA350BW_CH1_BQ1 + band), filter.Coefficients);
-    STA350BW_SetEq(STA350BW_RAM_BANK_SECOND, (uint8_t)(STA350BW_CH2_BQ1 + band), filter.Coefficients);
-
-    user_eq_ready = 1;
-}
-
-static void user_eq_apply_all(const int *gains_tenths, uint8_t count)
-{
-    uint8_t i = 0;
-
-    if (!gains_tenths || count != USER_EQ_BAND_COUNT)
-    {
-        return;
-    }
-
-    for (i = 0; i < USER_EQ_BAND_COUNT; i++)
-    {
-        float gain_db = (float)user_eq_clamp_gain(gains_tenths[i]) / 10.0f;
-        user_eq_update_band(i, gain_db);
-    }
-}
-
-static void user_eq_copy_to_preset(uint32_t *preset)
-{
-    uint8_t i = 0;
-
-    if (!preset)
-    {
-        return;
-    }
-
-    for (i = 0; i < USER_EQ_BAND_COUNT; i++)
-    {
-        memcpy(&preset[i * 5], user_eq_coeffs[i], sizeof(user_eq_coeffs[i]));
-    }
-    memcpy(&preset[USER_EQ_BAND_COUNT * 5], user_eq_flat_bq, sizeof(user_eq_flat_bq));
-}
-
-static void ble_apply_preset_id(uint8_t preset_id)
-{
-    if (preset_id > BIQUAD_TYPE_USER_3)
-    {
-        LOGE("invalid preset id:%d", preset_id);
-        return;
-    }
-    Switch_Demo((enum BiquadType)preset_id);
-}
-
-static void ble_save_user_preset(uint8_t slot)
-{
-    if (!user_eq_ready)
-    {
-        int gains[USER_EQ_BAND_COUNT] = {0};
-        user_eq_apply_all(gains, USER_EQ_BAND_COUNT);
-    }
-
-    switch (slot)
-    {
-    case EQ_SAVE_SLOT_1:
-        user_eq_copy_to_preset(USER_1_EQ_PRESET);
-        break;
-    case EQ_SAVE_SLOT_2:
-        user_eq_copy_to_preset(USER_2_EQ_PRESET);
-        break;
-    case EQ_SAVE_SLOT_3:
-        user_eq_copy_to_preset(USER_3_EQ_PRESET);
-        break;
-    default:
-        LOGE("invalid save slot:%d", slot);
-        break;
-    }
-}
-
-/* 经 ae3c 回传当前 EQ 状态: [MAGIC][CMD=QUERY][LEN=5][g0 g1 g2 g3 preset][SUM] */
-static void eq_send_query_response(void)
-{
-    uint8_t frame[EQ_FRAME_OVERHEAD + EQ_QUERY_RESP_LEN];
-    uint8_t i, sum = 0;
-
-    frame[EQ_FRAME_OFF_MAGIC] = EQ_PROTO_MAGIC;
-    frame[EQ_FRAME_OFF_CMD] = EQ_CMD_QUERY;
-    frame[EQ_FRAME_OFF_LEN] = EQ_QUERY_RESP_LEN;
-    for (i = 0; i < USER_EQ_BAND_COUNT; i++)
-    {
-        frame[EQ_FRAME_OFF_PAYLOAD + i] = (uint8_t)user_eq_cur_gains[i];
-    }
-    frame[EQ_FRAME_OFF_PAYLOAD + USER_EQ_BAND_COUNT] = user_eq_cur_preset;
-    for (i = 0; i < (uint8_t)(EQ_FRAME_OFF_PAYLOAD + EQ_QUERY_RESP_LEN); i++)
-    {
-        sum ^= frame[i];
-    }
-    frame[EQ_FRAME_OFF_PAYLOAD + EQ_QUERY_RESP_LEN] = sum;
-    eq_notify_send(frame, sizeof(frame));
-}
-
-/* BLE EQ 二进制命令解析: [MAGIC][CMD][LEN][PAYLOAD..][SUM], 见 eq_protocol.h */
-static void ble_sound_tuner_command_parse(const uint8_t *packet, uint16_t size)
-{
-    uint8_t cmd, len, sum = 0, i;
-    const uint8_t *pl;
-    int gains[USER_EQ_BAND_COUNT];
-
-    if (!packet || size < EQ_FRAME_MIN_LEN)
-    {
-        return;
-    }
-    if (packet[EQ_FRAME_OFF_MAGIC] != EQ_PROTO_MAGIC)
-    {
-        return;
-    }
-    cmd = packet[EQ_FRAME_OFF_CMD];
-    len = packet[EQ_FRAME_OFF_LEN];
-    if (len > EQ_FRAME_MAX_PAYLOAD || (uint16_t)(EQ_FRAME_OVERHEAD + len) > size)
-    {
-        LOGE("eq frame len err:%d size:%d", len, size);
-        return;
-    }
-    for (i = 0; i < (uint8_t)(EQ_FRAME_OFF_PAYLOAD + len); i++)
-    {
-        sum ^= packet[i];
-    }
-    if (sum != packet[EQ_FRAME_OFF_PAYLOAD + len])
-    {
-        LOGE("eq frame sum err");
-        return;
-    }
-
-    pl = &packet[EQ_FRAME_OFF_PAYLOAD];
-    switch (cmd)
-    {
-    case EQ_CMD_SET_BAND:
-        if (len >= 2)
-        {
-            uint8_t band = pl[0];
-            int g = user_eq_clamp_gain((int8_t)pl[1]);
-            if (band < USER_EQ_BAND_COUNT)
-            {
-                user_eq_update_band(band, (float)g / 10.0f);
-                user_eq_cur_gains[band] = (int8_t)g;
-            }
-        }
-        break;
-    case EQ_CMD_SET_ALL:
-        if (len >= USER_EQ_BAND_COUNT)
-        {
-            for (i = 0; i < USER_EQ_BAND_COUNT; i++)
-            {
-                gains[i] = user_eq_clamp_gain((int8_t)pl[i]);
-                user_eq_cur_gains[i] = (int8_t)gains[i];
-            }
-            user_eq_apply_all(gains, USER_EQ_BAND_COUNT);
-        }
-        break;
-    case EQ_CMD_PRESET:
-        if (len >= 1)
-        {
-            ble_apply_preset_id(pl[0]);
-            user_eq_cur_preset = pl[0];
-        }
-        break;
-    case EQ_CMD_SAVE:
-        if (len >= 1)
-        {
-            ble_save_user_preset(pl[0]);
-        }
-        break;
-    case EQ_CMD_QUERY:
-        eq_send_query_response();
-        break;
-    default:
-        LOGE("unknown eq cmd:%d", cmd);
-        break;
-    }
-}
 
 /* 音频输出走 iis0 -> 外置功放 STA350BW, 不经过芯片 DAC, 因此 SDK 的 DAC/数字音量
  * 对最终响度无效。最终响度的唯一旋钮是功放 MVOL 主音量, 故手机音量(0~100)直接
@@ -314,24 +85,6 @@ void USB_MUSIC_VOLUME_Event(int volume)
 {
     LOGD("USB_MUSIC_VOLUME_Event:%d", volume);
     user_amp_set_volume(volume);
-}
-
-/* ----------------------------------------------------------------------------*/
-/**
- * @brief BLE RX事件 提供给用户使用
- */
-/* ----------------------------------------------------------------------------*/
-void BLE_RX_Event(uint16_t att_handle, uint16_t transaction_mode, uint16_t offset, uint8_t *buffer, uint16_t buffer_size)
-{
-    switch (att_handle)
-    {
-    case ATT_CHARACTERISTIC_ae3b_01_VALUE_HANDLE:
-        ble_sound_tuner_command_parse(buffer, buffer_size);
-        break;
-
-    default:
-        break;
-    }
 }
 
 /********************************************************************************/
@@ -573,8 +326,9 @@ static void user_amp_apply_after_init(void)
         LOGI("user_amp_apply_after_init: unmute + volume=%d OK", user_amp_volume);
     }
 
-    /* 3) 应用默认 EQ 预设: 低音增强3(BASS_BOOST3) */
-    Switch_Demo(BIQUAD_TYPE_BASS_BOOST3);
+    /* 3) 应用 EQ: 由 eq_usb_hid 模块负责(开机=默认预设 BASS_BOOST3,
+     *    若 PC 工具已调过则恢复最新 EQ 状态)。 */
+    eq_usb_apply_current();
 }
 
 /**
@@ -650,7 +404,8 @@ static int32_t STA350BW_Probe(void)
         LOGI("STA350BW init OK addr=0x%X fs=%u", STA350BW.i2c_address, init_fs);
         if (init_fs != 0)
         {
-            user_eq_fs = init_fs;
+            /* 把实际锁定的采样率告知 EQ 模块, 用于 biquad 系数计算 */
+            eq_usb_set_fs(init_fs);
         }
         ret = RET_STATUS_OK;
         STA350BW.initialized = 1;
@@ -703,27 +458,37 @@ static void UserAudioDeviceTaskEntrance(void *pvParameter)
 #endif
 
     /* 开机首次 probe 若已成功, user_amp_apply_after_init() 已在 probe 内完成落地,
-     * 这里无需重复处理。下面的 while 负责"开机没锁上 PLL"时持续重试。 */
+     * 这里无需重复处理。下面的 while 负责"开机没锁上 PLL"时持续重试, 并消费
+     * PC 经 USB HID 投递的 EQ 待处理命令(去抖解耦, 真正写 I2C 在本任务上下文)。 */
     while (1)
     {
+        /* 优先快速消费 USB HID 投递的 EQ 待处理命令(去抖后只应用最新一帧),
+         * 这是把耗时的 I2C 写 EQ 从 USB 回调线程挪到本任务的关键, 避免卡顿/炸音。 */
+        eq_usb_process_pending();
+
         if (!STA350BW.initialized)
         {
             /* 方案A: 开机阶段 IIS0 时钟刚常驻、PLL 可能还没稳, 此时 probe 易失败。
              * 真正播放音乐后 IIS0 数据流在跑、MCLK 绝对稳定, 这里持续重试必能锁上;
              * 一旦成功, probe 内部的 user_amp_apply_after_init() 会立即把音量/unmute/EQ
-             * 写进芯片, 声音随即出来。重试间隔收紧到 0.5s, 让播放后尽快补声。 */
-            ret = STA350BW_Probe();
-            if (ret != RET_STATUS_OK)
+             * 写进芯片, 声音随即出来。用计数器维持约 0.5s 一次 probe, 避免高频拖累。 */
+            static uint16_t probe_retry_cnt = 0;
+            if (++probe_retry_cnt >= (500 / 20))
             {
-                LOGE("STA350BW_Probe retry ERROR:0x%X", ret);
-            }
-            else
-            {
-                LOGI("STA350BW_Probe retry OK (PLL locked, sound applied)");
+                probe_retry_cnt = 0;
+                ret = STA350BW_Probe();
+                if (ret != RET_STATUS_OK)
+                {
+                    LOGE("STA350BW_Probe retry ERROR:0x%X", ret);
+                }
+                else
+                {
+                    LOGI("STA350BW_Probe retry OK (PLL locked, sound applied)");
+                }
             }
         }
-        /* 0.5s 一轮: 未初始化时快速重试补声; 已初始化后这只是低频空转, 开销可忽略 */
-        os_time_dly(50);
+        /* 20ms 一轮: 兼顾 EQ 实时调节响应速度与系统负载 */
+        os_time_dly(2);
     }
 }
 
