@@ -149,7 +149,7 @@
 //*********************************************************************************//
 #ifdef CONFIG_NET_ENABLE
 // #define CONFIG_LTE_PHY_ENABLE                //usb网卡
-#define CONFIG_WIFI_ENABLE  					/*无线WIFI*///FIXME: 无线WIFI功能暂时不用
+// #define CONFIG_WIFI_ENABLE  					/*无线WIFI*///FIXME: 无线WIFI功能暂时不用; 关闭WIFI释放2.4G射频, 修复蓝牙搜不到名/连接失败/配对失败(WiFi/BT共存抢占RF). 关闭后蓝牙初始化自动切回app_main.c路径(见app_main.c:214)
 #ifdef CONFIG_NO_SDRAM_ENABLE
 #define CONFIG_RF_TRIM_CODE_MOVABLE //把RF TRIM 的运行代码动态加载到ram运行(节省4K ram内存), 防止RF TRIM 期间500ms大电流访问flash造成flash挂掉持续大电流
 #else

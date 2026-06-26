@@ -484,7 +484,11 @@ static void bt_function_select_init(void)
     ////设置蓝牙加密的level
     //io_capabilities ; /*0: Display only 1: Display YesNo 2: KeyboardOnly 3: NoInputNoOutput*/
     //authentication_requirements: 0:not protect  1 :protect
-    __set_simple_pair_param(3, 1, 2);
+    /* 修复: 本机 io_capabilities=3(NoInputNoOutput) 无输入输出能力, SSP 只能走 Just Works,
+     * 无法提供 MITM 保护; 原 auth=1(protect) 与之矛盾, 对端手机请求高安全级别配对时
+     * 协商会失败并返回 AUTHENTICATION_FAILURE -> 表现为部分手机"配对失败".
+     * 改为 auth=0(not protect), 与 NoInputNoOutput 的 Just Works 一致, 提升配对兼容性. */
+    __set_simple_pair_param(3, 0, 2);
 
     /* __set_disable_hfp_ag_flag(1); */
 

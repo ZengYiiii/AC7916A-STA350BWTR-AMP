@@ -139,7 +139,11 @@ const char *bt_get_local_name(void)
     mac_addr = bt_get_mac_addr();
 
     log_info("bt_get_local_name:%s", edr_name);
-    if (edr_name != NULL)
+    /* 修复: edr_name 是静态数组, 其地址恒非 NULL, 原 if(edr_name != NULL) 条件永远成立,
+     * 导致下面拼接默认名的兜底分支永不执行. 当 cfg 未配置 CFG_BT_NAME 时 edr_name 为全 0 空串,
+     * 会让蓝牙本地名为空, 手机端可能显示空名或直接过滤该设备 -> 表现为"搜不到蓝牙名称".
+     * 改为判断首字节是否为空串: 空串时用 mac 地址后两字节拼出默认名, 保证本地名非空. */
+    if (edr_name[0] != '\0')
     {
         return edr_name;
     }

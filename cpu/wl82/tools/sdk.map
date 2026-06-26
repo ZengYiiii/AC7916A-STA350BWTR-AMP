@@ -3401,7 +3401,7 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
                 0x00000000                CACHE_RAM_SIZE = ((FREE_DACHE_WAY * 0x1000) + (FREE_IACHE_WAY * 0x1000))
                 0x02000120                . = ORIGIN (rom)
 
-.text           0x02000120   0x14b2a0
+.text           0x02000120   0x14b2c0
                 0x02000120                _text_rodata_begin = .
                 [!provide]                PROVIDE (text_rodata_begin, .)
  *startup.S.o(.text)
@@ -3416,717 +3416,716 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
                 0x02000272                boot_memmove
                 0x02000394                boot_sdram_con_config
  *(.text*)
- .text          0x02000478    0x8fdc4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .text          0x02000478    0x8fde2 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
                 0x02001c3e                exception_analyze
                 0x02001fbe                sp_ovf_unen
                 0x02001fd2                sp_ovf_en
-                0x0201256a                __errno
-                0x020127c2                cpu1_main
-                0x02012e9e                main
-                0x02019b9a                update_result_get
+                0x02012572                __errno
+                0x020127ca                cpu1_main
+                0x02012ea6                main
+                0x02019ba6                update_result_get
  .text._ZN19SubbandNLMS_partialI9floatReal12floatComplexE15QueryBufferSizeEii
-                0x0209023c       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209025a       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19MCRA_NoiseEstimatorI9floatRealE15QueryBufferSizeEi
-                0x0209024c        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209026a        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN34SingleChannelNoiseSuppressorInBarkI9floatReal12floatComplexE19QueryTempBufferSizeEii
-                0x02090256        0xe ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090274        0xe ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN24WOLA_FilterBank_AnalyserI9floatReal12floatComplex11fixHalfRealEC2EPS0_iiiRK6VectorIS0_ER3FFTIS0_S1_E
-                0x02090264       0x5e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090282       0x5e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19VectorCircularArrayI9floatRealEC2Ev
-                0x020902c2        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020902e0        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN27WOLA_FilterBank_SynthesizerI9floatReal12floatComplex11fixHalfRealEC2EPS0_iiiRK6VectorIS0_ER3FFTIS0_S1_E
-                0x020902cc       0x8e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020902ea       0x8e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z22VectorTernaryOperationRKPFvRK6ScalarI9floatRealES3_RS1_ERK6VectorIS0_ESC_RSA_
-                0x0209035a       0x7e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090378       0x7e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z15VectorMulScalarRK6VectorI9floatRealERK6ScalarIS0_ERS1_
-                0x020903d8        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020903f6        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z9VectorSetRK6ScalarI9floatRealER6VectorIS0_E
-                0x020903e4        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090402        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z7powAprxI9floatRealEvRK6ScalarIT_ES5_RS3_
-                0x020903ee       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209040c       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZNK6MatrixI12floatComplexEclEiiii
-                0x02090416       0x3a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090434       0x3a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19SubbandNLMS_partialI9floatReal12floatComplexEC2EPS0_iiRK6VectorIS0_ES7_
-                0x02090450      0x10a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209046e      0x10a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19CoherenceCalculatorI9floatReal12floatComplexEC2EPS0_fi
-                0x0209055a       0x56 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090578       0x56 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN13dynamicVectorI12floatComplex9floatRealEC2ER9AllocatorIS1_Eii
-                0x020905b0       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020905ce       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN13dynamicVectorI9floatRealS0_EC2ER9AllocatorIS0_Eii
-                0x020905dc       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020905fa       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZNK6VectorI12floatComplexEclERK10Vectorzone
-                0x02090604       0x36 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090622       0x36 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZNK6VectorI9floatRealEclERK10Vectorzone
-                0x0209063a       0x36 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090658       0x36 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN24WOLA_FilterBank_AnalyserI9floatReal12floatComplex11fixHalfRealE7AnalyseERK6VectorIS2_ERS4_IS1_ER9AllocatorIS0_E
-                0x02090670      0x128 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209068e      0x128 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z12VectorGetMagRK6VectorI12floatComplexERS_I9floatRealE
-                0x02090798        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907b6        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z9VectorMaxRK6ScalarI9floatRealER6VectorIS0_E
-                0x020907a2        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907c0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z22VectorRecursiveAverageRK6VectorI9floatRealERS1_RK6ScalarIS0_E
-                0x020907ae        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907cc        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z20VectorElementwiseMulRK6VectorI9floatRealES3_RS1_
-                0x020907ba        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907d8        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z9VectorMinRK6ScalarI9floatRealER6VectorIS0_E
-                0x020907c4        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907e2        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19CoherenceCalculatorI9floatReal12floatComplexE9CalculateERK6VectorIS1_ES6_RS3_IS0_ER9AllocatorIS0_E
-                0x020907d0       0x9a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020907ee       0x9a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z11VectorMinusRK6VectorI9floatRealES3_RS1_
-                0x0209086a        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090888        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z10VectorCopyRK6VectorI12floatComplexERS1_
-                0x02090874        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090892        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z18MatrixAccessColumnRK6MatrixI12floatComplexER6VectorIS0_Ei
-                0x0209087e       0x32 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209089c       0x32 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z25VectorMagRecursiveAverageRK6VectorI12floatComplexERS_I9floatRealERK6ScalarIS4_E
-                0x020908b0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020908ce        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z20VectorElementwiseMulRK6VectorI12floatComplexERKS_I9floatRealERS1_
-                0x020908bc        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020908da        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z10VectorPlusRK6VectorI9floatRealES3_RS1_
-                0x020908c6        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020908e4        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN13dynamicVectorI12floatComplex9floatRealED2Ev
-                0x020908d0       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020908ee       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19SubbandNLMS_partialI9floatReal12floatComplexE7ProcessERK6VectorIS1_ES6_RS4_S7_R9AllocatorIS0_E
-                0x020908ec      0x172 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0209090a      0x172 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z12VectorDivideRK6VectorI9floatRealES3_RS1_RK6ScalarIS0_E
-                0x02090a5e        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090a7c        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z15VectorCompareBTRK6VectorI9floatRealES3_RS_IiE
-                0x02090a6a        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .text._Z10VectorCopyRK6VectorI9floatRealERS1_
-                0x02090a74        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .text._Z22VectorElementwiseShiftRK6VectorI9floatRealERS1_i
-                0x02090a7e        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .text._Z9VectorMinRK6VectorI9floatRealES3_RS1_
                 0x02090a88        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .text._Z10VectorCopyRK6VectorI9floatRealERS1_
+                0x02090a92        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .text._Z22VectorElementwiseShiftRK6VectorI9floatRealERS1_i
+                0x02090a9c        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .text._Z9VectorMinRK6VectorI9floatRealES3_RS1_
+                0x02090aa6        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19MCRA_NoiseEstimatorI9floatRealE8EstimateERK6VectorIS0_ERS3_R9AllocatorIS0_E
-                0x02090a92      0x1d2 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090ab0      0x1d2 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZNK6VectorI9floatRealEclEiii
-                0x02090c64       0x3c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090c82       0x3c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN34SingleChannelNoiseSuppressorInBarkI9floatReal12floatComplexE12CalcSuppressERK6VectorIS0_ES6_RS4_R9AllocatorIS0_E
-                0x02090ca0      0x1b0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090cbe      0x1b0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19VectorCircularArrayI9floatRealEppEi
-                0x02090e50       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090e6e       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN19VectorCircularArrayI9floatRealEmmEi
-                0x02090e64       0x1e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090e82       0x1e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN27WOLA_FilterBank_SynthesizerI9floatReal12floatComplex11fixHalfRealE10SynthesizeERK6VectorIS1_ERS4_IS2_ER9AllocatorIS0_E
-                0x02090e82      0x11e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090ea0      0x11e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z12logisticAprxI9floatRealEvRK6ScalarIT_ERS3_
-                0x02090fa0       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090fbe       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._Z8magnAprxI12floatComplex9floatRealEvRK6ScalarIT_ERS2_IT0_E
-                0x02090fc8        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090fe6        0xa ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN15StaticAllocatorI9floatRealE5allocEj
-                0x02090fd2        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02090ff0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .text._ZN15StaticAllocatorI9floatRealE4freeEPS0_j
-                0x02090fde        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/btctrler/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/btstack/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/driver/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/media/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/net/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/server/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/system/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/update/version.z.o
- .text          0x02090fe6        0x0 obj/Release/include_lib/utils/version.z.o
- .text          0x02090fe6        0x0 obj/Release/lib/net/version.z.o
- .text          0x02090fe6        0x0 obj/Release/lib/server/version.z.o
- .text          0x02090fe6        0x0 obj/Release/lib/utils/version.z.o
- .text          0x02090fe6       0x84 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_cos.o)
-                0x02090fe6                cos
- .text          0x0209106a       0x6c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_cos.o)
-                0x0209106a                cosf
- .text          0x020910d6        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_fabs.o)
-                0x020910d6                fabsf
- .text          0x020910da       0x6c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_sin.o)
-                0x020910da                sinf
- .text          0x02091146       0x42 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_tan.o)
-                0x02091146                tanf
- .text          0x02091188        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_exp.o)
-                0x02091188                expf
- .text          0x0209118c        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_pow.o)
-                0x0209118c                powf
- .text          0x02091190        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_sqrt.o)
-                0x02091190                sqrtf
- .text          0x02091194      0x16e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_exp.o)
-                0x02091194                __ieee754_expf
- .text          0x02091302      0x4f0 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
-                0x02091302                __ieee754_powf
- .text          0x020917f2      0x222 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_rem_pio2.o)
-                0x020917f2                __ieee754_rem_pio2f
- .text          0x02091a14       0x86 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_sqrt.o)
-                0x02091a14                __ieee754_sqrtf
- .text          0x02091a9a      0x392 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_rem_pio2.o)
-                0x02091a9a                __ieee754_rem_pio2
- .text          0x02091e2c      0x160 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_cos.o)
-                0x02091e2c                __kernel_cos
- .text          0x02091f8c       0xd6 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_cos.o)
-                0x02091f8c                __kernel_cosf
- .text          0x02092062      0x47e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_rem_pio2.o)
-                0x02092062                __kernel_rem_pio2f
- .text          0x020924e0       0x9e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_sin.o)
-                0x020924e0                __kernel_sinf
- .text          0x0209257e      0x1b8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_tan.o)
-                0x0209257e                __kernel_tanf
- .text          0x02092736      0x62c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
-                0x02092736                __kernel_rem_pio2
- .text          0x02092d62      0x130 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_sin.o)
-                0x02092d62                __kernel_sin
- .text          0x02092e92        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_fabs.o)
-                0x02092e92                fabs
- .text          0x02092e96       0x72 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_floor.o)
-                0x02092e96                floorf
- .text          0x02092f08       0xfc ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_floor.o)
-                0x02092f08                floor
- .text          0x02093004        0x8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_nan.o)
-                0x02093004                nanf
- .text          0x0209300c       0xa2 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_scalbn.o)
-                0x0209300c                scalbnf
- .text          0x020930ae       0xe2 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_scalbn.o)
-                0x020930ae                scalbn
- .text          0x02093190       0x20 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_copysign.o)
-                0x02093190                copysign
- .text          0x020931b0        0x8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_copysign.o)
-                0x020931b0                copysignf
- .text          0x020931b8       0x10 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-atoi.o)
-                0x020931b8                atoi
-                0x020931c0                _atoi_r
- .text          0x020931c8        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-index.o)
-                0x020931c8                index
- .text          0x020931cc       0x38 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memcmp.o)
-                0x020931cc                memcmp
- .text          0x02093204        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-rindex.o)
-                0x02093204                rindex
- .text          0x02093208       0x14 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strchr.o)
-                0x02093208                strchr
- .text          0x0209321c       0xa0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcmp.o)
-                0x0209321c                strcmp
- .text          0x020932bc       0x6e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcpy.o)
-                0x020932bc                strcpy
- .text          0x0209332a       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcspn.o)
-                0x0209332a                strcspn
- .text          0x0209334e        0xc ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strlen.o)
-                0x0209334e                strlen
- .text          0x0209335a       0x1a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncmp.o)
-                0x0209335a                strncmp
- .text          0x02093374       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strrchr.o)
-                0x02093374                strrchr
- .text          0x02093398       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strspn.o)
-                0x02093398                strspn
- .text          0x020933bc       0x2a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strstr.o)
-                0x020933bc                strstr
- .text          0x020933e6      0x108 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtol.o)
-                0x020933e6                _strtol_r
-                0x020934d6                strtol
- .text          0x020934ee        0x0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-ctype_.o)
- .text          0x020934ee        0x0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
- .text          0x020934ee      0x30e ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(adddf3.o)
-                0x0209351c                __adddf3
- .text          0x020937fc      0x1b8 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(comparedf2.o)
-                0x020937fc                __cmpdf2
-                0x020937fc                __ledf2
-                0x020938ac                __gedf2
-                0x02093954                __unorddf2
-                0x02093994                __eqdf2
-                0x0209399c                __ltdf2
-                0x020939a4                __nedf2
-                0x020939ac                __gtdf2
- .text          0x020939b4       0x54 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(fixdfsi.o)
-                0x020939b4                __fixdfsi
- .text          0x02093a08       0x4c ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatsidf.o)
-                0x02093a08                __floatsidf
- .text          0x02093a54      0x2ec ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(muldf3.o)
-                0x02093a7c                __muldf3
- .text          0x02093d40        0xc ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(subdf3.o)
-                0x02093d40                __subdf3
- .text          0x02093d4c        0x0 ../../../../cpu/wl82/liba/event.a(version.z.o)
- .text          0x02093d4c       0x78 ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
-                0x02093d4c                vSoftwareInterruptISR
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/system.a(movable.S.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/system.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/fs.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/cpu.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/update.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libvad.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/net_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/profile.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/hsm.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/http_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/json.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/network_download.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libturing.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libdui.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libwt.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/websocket.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/iperf.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/btstack.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/ui.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/res.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/font.a(version.z.o)
- .text          0x02093dc4        0x0 ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
- .text          0x02093dc4      0x10c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_ceil.o)
-                0x02093dc4                ceil
- .text          0x02093ed0       0x8e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_modf.o)
-                0x02093ed0                modf
- .text          0x02093f5e        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-w_exp.o)
-                0x02093f5e                exp
- .text          0x02093f62      0x280 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_exp.o)
-                0x02093f62                __ieee754_exp
- .text          0x020941e2       0x1a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-islower.o)
-                0x020941e2                islower
- .text          0x020941fc       0x12 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-isspace.o)
-                0x020941fc                isspace
- .text          0x0209420e       0xc2 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memcpy.o)
-                0x0209420e                memmove
-                0x0209420e                memcpy
- .text          0x020942d0       0x28 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memmem.o)
-                0x020942d0                memmem
- .text          0x020942f8       0x2c ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memset.o)
-                0x020942f8                memset
- .text          0x02094324      0x2ae ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-qsort.o)
-                0x0209438e                qsort
- .text          0x020945d2       0x4e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-rand.o)
-                0x020945d2                srand
-                0x020945e2                rand
- .text          0x02094620       0x3e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcasecmp.o)
-                0x02094620                strcasecmp
- .text          0x0209465e       0x18 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcat.o)
-                0x0209465e                strcat
- .text          0x02094676       0x46 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncasecmp.o)
-                0x02094676                strncasecmp
- .text          0x020946bc       0x26 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncpy.o)
-                0x020946bc                strncpy
- .text          0x020946e2       0x36 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strpbrk.o)
-                0x020946e2                strpbrk
- .text          0x02094718        0xa ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strsep.o)
-                0x02094718                strsep
- .text          0x02094722       0x54 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtok_r.o)
-                0x02094722                __strtok_r
-                0x02094772                strtok_r
- .text          0x02094776       0xfe ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtoul.o)
-                0x02094776                _strtoul_r
-                0x0209485c                strtoul
- .text          0x02094874       0x1e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-tolower.o)
-                0x02094874                tolower
- .text          0x02094892      0x338 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(divdf3.o)
-                0x020948ba                __divdf3
- .text          0x02094bca       0x5c ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(divdi3.o)
-                0x02094bca                __divdi3
- .text          0x02094c26       0x7a ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(extendsfdf2.o)
-                0x02094c26                __extendsfdf2
- .text          0x02094ca0       0x3a ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatdidf.o)
-                0x02094ca0                __floatdidf
- .text          0x02094cda       0x34 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatunsidf.o)
-                0x02094cda                __floatunsidf
- .text          0x02094d0e      0x146 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(truncdfsf2.o)
-                0x02094d0e                __truncdfsf2
- .text          0x02094e54       0x12 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(udivdi3.o)
-                0x02094e54                __udivdi3
- .text          0x02094e66      0x226 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(udivmoddi4.o)
-                0x02094e66                __udivmoddi4
+                0x02090ffc        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .text          0x02091004        0x0 obj/Release/include_lib/btctrler/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/btstack/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/driver/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/media/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/net/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/server/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/system/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/update/version.z.o
+ .text          0x02091004        0x0 obj/Release/include_lib/utils/version.z.o
+ .text          0x02091004        0x0 obj/Release/lib/net/version.z.o
+ .text          0x02091004        0x0 obj/Release/lib/server/version.z.o
+ .text          0x02091004        0x0 obj/Release/lib/utils/version.z.o
+ .text          0x02091004       0x84 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_cos.o)
+                0x02091004                cos
+ .text          0x02091088       0x6c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_cos.o)
+                0x02091088                cosf
+ .text          0x020910f4        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_fabs.o)
+                0x020910f4                fabsf
+ .text          0x020910f8       0x6c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_sin.o)
+                0x020910f8                sinf
+ .text          0x02091164       0x42 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_tan.o)
+                0x02091164                tanf
+ .text          0x020911a6        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_exp.o)
+                0x020911a6                expf
+ .text          0x020911aa        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_pow.o)
+                0x020911aa                powf
+ .text          0x020911ae        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-wf_sqrt.o)
+                0x020911ae                sqrtf
+ .text          0x020911b2      0x16e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_exp.o)
+                0x020911b2                __ieee754_expf
+ .text          0x02091320      0x4f0 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
+                0x02091320                __ieee754_powf
+ .text          0x02091810      0x222 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_rem_pio2.o)
+                0x02091810                __ieee754_rem_pio2f
+ .text          0x02091a32       0x86 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_sqrt.o)
+                0x02091a32                __ieee754_sqrtf
+ .text          0x02091ab8      0x392 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_rem_pio2.o)
+                0x02091ab8                __ieee754_rem_pio2
+ .text          0x02091e4a      0x160 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_cos.o)
+                0x02091e4a                __kernel_cos
+ .text          0x02091faa       0xd6 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_cos.o)
+                0x02091faa                __kernel_cosf
+ .text          0x02092080      0x47e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_rem_pio2.o)
+                0x02092080                __kernel_rem_pio2f
+ .text          0x020924fe       0x9e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_sin.o)
+                0x020924fe                __kernel_sinf
+ .text          0x0209259c      0x1b8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_tan.o)
+                0x0209259c                __kernel_tanf
+ .text          0x02092754      0x62c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
+                0x02092754                __kernel_rem_pio2
+ .text          0x02092d80      0x130 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_sin.o)
+                0x02092d80                __kernel_sin
+ .text          0x02092eb0        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_fabs.o)
+                0x02092eb0                fabs
+ .text          0x02092eb4       0x72 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_floor.o)
+                0x02092eb4                floorf
+ .text          0x02092f26       0xfc ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_floor.o)
+                0x02092f26                floor
+ .text          0x02093022        0x8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_nan.o)
+                0x02093022                nanf
+ .text          0x0209302a       0xa2 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_scalbn.o)
+                0x0209302a                scalbnf
+ .text          0x020930cc       0xe2 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_scalbn.o)
+                0x020930cc                scalbn
+ .text          0x020931ae       0x20 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_copysign.o)
+                0x020931ae                copysign
+ .text          0x020931ce        0x8 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-sf_copysign.o)
+                0x020931ce                copysignf
+ .text          0x020931d6       0x10 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-atoi.o)
+                0x020931d6                atoi
+                0x020931de                _atoi_r
+ .text          0x020931e6        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-index.o)
+                0x020931e6                index
+ .text          0x020931ea       0x38 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memcmp.o)
+                0x020931ea                memcmp
+ .text          0x02093222        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-rindex.o)
+                0x02093222                rindex
+ .text          0x02093226       0x14 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strchr.o)
+                0x02093226                strchr
+ .text          0x0209323a       0xa0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcmp.o)
+                0x0209323a                strcmp
+ .text          0x020932da       0x6e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcpy.o)
+                0x020932da                strcpy
+ .text          0x02093348       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcspn.o)
+                0x02093348                strcspn
+ .text          0x0209336c        0xc ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strlen.o)
+                0x0209336c                strlen
+ .text          0x02093378       0x1a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncmp.o)
+                0x02093378                strncmp
+ .text          0x02093392       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strrchr.o)
+                0x02093392                strrchr
+ .text          0x020933b6       0x24 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strspn.o)
+                0x020933b6                strspn
+ .text          0x020933da       0x2a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strstr.o)
+                0x020933da                strstr
+ .text          0x02093404      0x108 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtol.o)
+                0x02093404                _strtol_r
+                0x020934f4                strtol
+ .text          0x0209350c        0x0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-ctype_.o)
+ .text          0x0209350c        0x0 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
+ .text          0x0209350c      0x30e ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(adddf3.o)
+                0x0209353a                __adddf3
+ .text          0x0209381a      0x1b8 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(comparedf2.o)
+                0x0209381a                __cmpdf2
+                0x0209381a                __ledf2
+                0x020938ca                __gedf2
+                0x02093972                __unorddf2
+                0x020939b2                __eqdf2
+                0x020939ba                __ltdf2
+                0x020939c2                __nedf2
+                0x020939ca                __gtdf2
+ .text          0x020939d2       0x54 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(fixdfsi.o)
+                0x020939d2                __fixdfsi
+ .text          0x02093a26       0x4c ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatsidf.o)
+                0x02093a26                __floatsidf
+ .text          0x02093a72      0x2ec ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(muldf3.o)
+                0x02093a9a                __muldf3
+ .text          0x02093d5e        0xc ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(subdf3.o)
+                0x02093d5e                __subdf3
+ .text          0x02093d6a        0x0 ../../../../cpu/wl82/liba/event.a(version.z.o)
+ .text          0x02093d6a       0x78 ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
+                0x02093d6a                vSoftwareInterruptISR
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/system.a(movable.S.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/system.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/fs.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/cpu.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/update.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libvad.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/net_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/profile.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/hsm.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/http_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/json.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/network_download.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libturing.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libdui.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libwt.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/websocket.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/iperf.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/btstack.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/ui.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/res.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/font.a(version.z.o)
+ .text          0x02093de2        0x0 ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
+ .text          0x02093de2      0x10c ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_ceil.o)
+                0x02093de2                ceil
+ .text          0x02093eee       0x8e ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-s_modf.o)
+                0x02093eee                modf
+ .text          0x02093f7c        0x4 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-w_exp.o)
+                0x02093f7c                exp
+ .text          0x02093f80      0x280 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_exp.o)
+                0x02093f80                __ieee754_exp
+ .text          0x02094200       0x1a ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-islower.o)
+                0x02094200                islower
+ .text          0x0209421a       0x12 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-isspace.o)
+                0x0209421a                isspace
+ .text          0x0209422c       0xc2 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memcpy.o)
+                0x0209422c                memmove
+                0x0209422c                memcpy
+ .text          0x020942ee       0x28 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memmem.o)
+                0x020942ee                memmem
+ .text          0x02094316       0x2c ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-memset.o)
+                0x02094316                memset
+ .text          0x02094342      0x2ae ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-qsort.o)
+                0x020943ac                qsort
+ .text          0x020945f0       0x4e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-rand.o)
+                0x020945f0                srand
+                0x02094600                rand
+ .text          0x0209463e       0x3e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcasecmp.o)
+                0x0209463e                strcasecmp
+ .text          0x0209467c       0x18 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strcat.o)
+                0x0209467c                strcat
+ .text          0x02094694       0x46 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncasecmp.o)
+                0x02094694                strncasecmp
+ .text          0x020946da       0x26 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strncpy.o)
+                0x020946da                strncpy
+ .text          0x02094700       0x36 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strpbrk.o)
+                0x02094700                strpbrk
+ .text          0x02094736        0xa ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strsep.o)
+                0x02094736                strsep
+ .text          0x02094740       0x54 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtok_r.o)
+                0x02094740                __strtok_r
+                0x02094790                strtok_r
+ .text          0x02094794       0xfe ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-strtoul.o)
+                0x02094794                _strtoul_r
+                0x0209487a                strtoul
+ .text          0x02094892       0x1e ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-tolower.o)
+                0x02094892                tolower
+ .text          0x020948b0      0x338 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(divdf3.o)
+                0x020948d8                __divdf3
+ .text          0x02094be8       0x5c ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(divdi3.o)
+                0x02094be8                __divdi3
+ .text          0x02094c44       0x7a ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(extendsfdf2.o)
+                0x02094c44                __extendsfdf2
+ .text          0x02094cbe       0x3a ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatdidf.o)
+                0x02094cbe                __floatdidf
+ .text          0x02094cf8       0x34 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(floatunsidf.o)
+                0x02094cf8                __floatunsidf
+ .text          0x02094d2c      0x146 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(truncdfsf2.o)
+                0x02094d2c                __truncdfsf2
+ .text          0x02094e72       0x12 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(udivdi3.o)
+                0x02094e72                __udivdi3
+ .text          0x02094e84      0x226 ../../../../include_lib/newlib/pi32v2-lib/libcompiler_rt.a(udivmoddi4.o)
+                0x02094e84                __udivmoddi4
  *(.rodata*)
- *fill*         0x0209508c        0x4 
+ *fill*         0x020950aa        0x6 
  .rodata.str1.16
-                0x02095090     0x1440 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020950b0     0x1440 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
                                0x1436 (size before relaxing)
  .rodata.str1.1
-                0x020964d0     0x3353 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                               0x336f (size before relaxing)
- *fill*         0x02099823       0x1d 
- .rodata        0x02099840    0x4ef40 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .rodata.cst16  0x020e8780       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .rodata.cst32  0x020e87a0       0xa0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020964f0     0x332a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                               0x3346 (size before relaxing)
+ *fill*         0x0209981a       0x26 
+ .rodata        0x02099840    0x4ef70 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .rodata.cst16  0x020e87b0       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .rodata.cst32  0x020e87d0       0xa0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .rodata.str4.4
-                0x020e8840       0x48 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020e8870       0x48 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .rodata._ZTV15StaticAllocatorI9floatRealE
-                0x020e8888       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .rodata.cst8   0x020e8898        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .rodata.cst8   0x020e88a0       0x18 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_exp.o)
+                0x020e88b8       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .rodata.cst8   0x020e88c8        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .rodata.cst8   0x020e88d0       0x18 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_exp.o)
  .rodata.str1.1
-                0x020e88b8        0x0 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
+                0x020e88e8        0x0 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
                                   0x1 (size before relaxing)
- .rodata.cst8   0x020e88b8       0x18 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
- .rodata        0x020e88d0      0x398 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_rem_pio2.o)
- .rodata        0x020e8c68      0x188 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_rem_pio2.o)
- .rodata        0x020e8df0       0x38 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_rem_pio2.o)
- .rodata.cst16  0x020e8e28       0x10 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
- .rodata        0x020e8e38       0x40 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
- .rodata        0x020e8e78      0x281 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-ctype_.o)
-                0x020e8ff8                _ctype_
- *fill*         0x020e90f9        0x3 
- .rodata        0x020e90fc        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
-                0x020e90fc                _global_impure_ptr
+ .rodata.cst8   0x020e88e8       0x18 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_pow.o)
+ .rodata        0x020e8900      0x398 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-ef_rem_pio2.o)
+ .rodata        0x020e8c98      0x188 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_rem_pio2.o)
+ .rodata        0x020e8e20       0x38 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-kf_rem_pio2.o)
+ .rodata.cst16  0x020e8e58       0x10 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
+ .rodata        0x020e8e68       0x40 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-k_rem_pio2.o)
+ .rodata        0x020e8ea8      0x281 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-ctype_.o)
+                0x020e9028                _ctype_
+ *fill*         0x020e9129        0x3 
+ .rodata        0x020e912c        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
+                0x020e912c                _global_impure_ptr
  .rodata.str1.1
-                0x020e9100        0x2 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
- *fill*         0x020e9102        0x2 
- .rodata.cst16  0x020e9104       0x30 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_exp.o)
+                0x020e9130        0x2 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-impure.o)
+ *fill*         0x020e9132        0x2 
+ .rodata.cst16  0x020e9134       0x30 ../../../../include_lib/newlib/pi32v2-lib/libm.a(lib_a-e_exp.o)
  *(.LOG_TAG_CONST*)
  *(.fat_data_code)
  .fat_data_code
-                0x020e9134      0x9b4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020e9ae8                . = ALIGN (0x4)
+                0x020e9164      0x9b4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020e9b18                . = ALIGN (0x4)
  *(.update_const)
- .update_const  0x020e9ae8       0x82 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .update_const  0x020e9b18       0x82 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.update_code)
- .update_code   0x020e9b6a     0x1864 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .update_code   0x020e9b9a     0x1866 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.bt_updata_ram_code)
-                0x020eb3d0                . = ALIGN (0x4)
- *fill*         0x020eb3ce        0x2 
-                0x020eb3d0                __VERSION_BEGIN = .
+                0x020eb400                . = ALIGN (0x4)
+                0x020eb400                __VERSION_BEGIN = .
  *(.sys.version)
- .sys.version   0x020eb3d0       0x1a obj/Release/include_lib/btctrler/version.z.o
- .sys.version   0x020eb3ea       0x19 obj/Release/include_lib/btstack/version.z.o
-                0x020eb3ea                include_lib_btstack_version
- .sys.version   0x020eb403       0x18 obj/Release/include_lib/driver/version.z.o
-                0x020eb403                include_lib_driver_version
- .sys.version   0x020eb41b       0x17 obj/Release/include_lib/media/version.z.o
-                0x020eb41b                include_lib_media_version
- .sys.version   0x020eb432       0x15 obj/Release/include_lib/net/version.z.o
-                0x020eb432                include_lib_net_version
- .sys.version   0x020eb447       0x18 obj/Release/include_lib/server/version.z.o
-                0x020eb447                include_lib_server_version
- .sys.version   0x020eb45f       0x18 obj/Release/include_lib/system/version.z.o
-                0x020eb45f                include_lib_system_version
- .sys.version   0x020eb477       0x18 obj/Release/include_lib/update/version.z.o
-                0x020eb477                include_lib_update_version
- .sys.version   0x020eb48f       0x17 obj/Release/include_lib/utils/version.z.o
-                0x020eb48f                include_lib_utils_version
- .sys.version   0x020eb4a6        0xe obj/Release/lib/net/version.z.o
-                0x020eb4a6                lib_net_version
- .sys.version   0x020eb4b4       0x10 obj/Release/lib/server/version.z.o
-                0x020eb4b4                lib_server_version
- .sys.version   0x020eb4c4        0xf obj/Release/lib/utils/version.z.o
-                0x020eb4c4                lib_utils_version
- .sys.version   0x020eb4d3        0x0 ../../../../cpu/wl82/liba/event.a(version.z.o)
-                0x020eb4d3                lib_event_version
- .sys.version   0x020eb4d3       0x10 ../../../../cpu/wl82/liba/system.a(version.z.o)
-                0x020eb4d3                lib_system_version
- .sys.version   0x020eb4e3        0x0 ../../../../cpu/wl82/liba/fs.a(version.z.o)
-                0x020eb4e3                lib_fs_version
- .sys.version   0x020eb4e3        0x0 ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
-                0x020eb4e3                lib_cfg_tool_version
- .sys.version   0x020eb4e3       0x10 ../../../../cpu/wl82/liba/cpu.a(version.z.o)
-                0x020eb4e3                lib_driver_version
- .sys.version   0x020eb4f3       0x10 ../../../../cpu/wl82/liba/update.a(version.z.o)
-                0x020eb4f3                lib_update_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
-                0x020eb503                lib_common_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
-                0x020eb503                lib_wl82_rf_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
-                0x020eb503                lib_audio_server_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libvad.a(version.z.o)
-                0x020eb503                lib_device_vad_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/net_server.a(version.z.o)
-                0x020eb503                lib_net_server_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
-                0x020eb503                lib_video_rec_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
-                0x020eb503                lib_lwip_2_1_3_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
-                0x020eb503                lib_wifi_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
-                0x020eb503                lib_zliblite_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/profile.a(version.z.o)
-                0x020eb503                lib_profile_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
-                0x020eb503                lib_media_server_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
-                0x020eb503                lib_mbedtls_2_2_1_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
-                0x020eb503                lib_wolfssl_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
-                0x020eb503                lib_wpa_supplicant_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/hsm.a(version.z.o)
-                0x020eb503                lib_hsm_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
-                0x020eb503                lib_httpcli_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/http_server.a(version.z.o)
-                0x020eb503                lib_http_server_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/json.a(version.z.o)
-                0x020eb503                lib_json_c_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
-                0x020eb503                lib_duer_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/network_download.a(version.z.o)
-                0x020eb503                lib_network_download_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
-                0x020eb503                lib_mqtt_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libturing.a(version.z.o)
-                0x020eb503                lib_turing_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libdui.a(version.z.o)
-                0x020eb503                lib_dui_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
-                0x020eb503                lib_jl_cloud_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
-                0x020eb503                lib_echocloud_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
-                0x020eb503                lib_mpeg_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
-                0x020eb503                lib_dcl_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
-                0x020eb503                lib_dlna_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libwt.a(version.z.o)
-                0x020eb503                lib_wt_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
-                0x020eb503                lib_tencent_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/websocket.a(version.z.o)
-                0x020eb503                lib_websocket_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/iperf.a(version.z.o)
-                0x020eb503                lib_iperf_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
-                0x020eb503                lib_tmallgenie_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
-                0x020eb503                lib_cjson_version
- .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
-                0x020eb503                lib_ftpserver_version
- .sys.version   0x020eb503       0x12 ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
-                0x020eb503                lib_btctler_version
- .sys.version   0x020eb515       0x11 ../../../../cpu/wl82/liba/btstack.a(version.z.o)
-                0x020eb515                lib_btstack_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
-                0x020eb526                lib_crcm_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
-                0x020eb526                lib_btmesh_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
-                0x020eb526                lib_cryto_toolbox_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
-                0x020eb526                lib_video_dec_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/ui.a(version.z.o)
-                0x020eb526                lib_ui_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/res.a(version.z.o)
-                0x020eb526                lib_res_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/font.a(version.z.o)
-                0x020eb526                lib_font_version
- .sys.version   0x020eb526        0x0 ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
-                0x020eb526                lib_ui_draw_version
-                0x020eb526                __VERSION_END = .
-                0x020eb526                crypto_begin = .
+ .sys.version   0x020eb400       0x1a obj/Release/include_lib/btctrler/version.z.o
+ .sys.version   0x020eb41a       0x19 obj/Release/include_lib/btstack/version.z.o
+                0x020eb41a                include_lib_btstack_version
+ .sys.version   0x020eb433       0x18 obj/Release/include_lib/driver/version.z.o
+                0x020eb433                include_lib_driver_version
+ .sys.version   0x020eb44b       0x17 obj/Release/include_lib/media/version.z.o
+                0x020eb44b                include_lib_media_version
+ .sys.version   0x020eb462       0x15 obj/Release/include_lib/net/version.z.o
+                0x020eb462                include_lib_net_version
+ .sys.version   0x020eb477       0x18 obj/Release/include_lib/server/version.z.o
+                0x020eb477                include_lib_server_version
+ .sys.version   0x020eb48f       0x18 obj/Release/include_lib/system/version.z.o
+                0x020eb48f                include_lib_system_version
+ .sys.version   0x020eb4a7       0x18 obj/Release/include_lib/update/version.z.o
+                0x020eb4a7                include_lib_update_version
+ .sys.version   0x020eb4bf       0x17 obj/Release/include_lib/utils/version.z.o
+                0x020eb4bf                include_lib_utils_version
+ .sys.version   0x020eb4d6        0xe obj/Release/lib/net/version.z.o
+                0x020eb4d6                lib_net_version
+ .sys.version   0x020eb4e4       0x10 obj/Release/lib/server/version.z.o
+                0x020eb4e4                lib_server_version
+ .sys.version   0x020eb4f4        0xf obj/Release/lib/utils/version.z.o
+                0x020eb4f4                lib_utils_version
+ .sys.version   0x020eb503        0x0 ../../../../cpu/wl82/liba/event.a(version.z.o)
+                0x020eb503                lib_event_version
+ .sys.version   0x020eb503       0x10 ../../../../cpu/wl82/liba/system.a(version.z.o)
+                0x020eb503                lib_system_version
+ .sys.version   0x020eb513        0x0 ../../../../cpu/wl82/liba/fs.a(version.z.o)
+                0x020eb513                lib_fs_version
+ .sys.version   0x020eb513        0x0 ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
+                0x020eb513                lib_cfg_tool_version
+ .sys.version   0x020eb513       0x10 ../../../../cpu/wl82/liba/cpu.a(version.z.o)
+                0x020eb513                lib_driver_version
+ .sys.version   0x020eb523       0x10 ../../../../cpu/wl82/liba/update.a(version.z.o)
+                0x020eb523                lib_update_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
+                0x020eb533                lib_common_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
+                0x020eb533                lib_wl82_rf_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
+                0x020eb533                lib_audio_server_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libvad.a(version.z.o)
+                0x020eb533                lib_device_vad_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/net_server.a(version.z.o)
+                0x020eb533                lib_net_server_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
+                0x020eb533                lib_video_rec_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
+                0x020eb533                lib_lwip_2_1_3_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
+                0x020eb533                lib_wifi_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
+                0x020eb533                lib_zliblite_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/profile.a(version.z.o)
+                0x020eb533                lib_profile_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
+                0x020eb533                lib_media_server_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
+                0x020eb533                lib_mbedtls_2_2_1_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
+                0x020eb533                lib_wolfssl_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
+                0x020eb533                lib_wpa_supplicant_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/hsm.a(version.z.o)
+                0x020eb533                lib_hsm_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
+                0x020eb533                lib_httpcli_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/http_server.a(version.z.o)
+                0x020eb533                lib_http_server_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/json.a(version.z.o)
+                0x020eb533                lib_json_c_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
+                0x020eb533                lib_duer_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/network_download.a(version.z.o)
+                0x020eb533                lib_network_download_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
+                0x020eb533                lib_mqtt_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libturing.a(version.z.o)
+                0x020eb533                lib_turing_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libdui.a(version.z.o)
+                0x020eb533                lib_dui_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
+                0x020eb533                lib_jl_cloud_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
+                0x020eb533                lib_echocloud_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
+                0x020eb533                lib_mpeg_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
+                0x020eb533                lib_dcl_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
+                0x020eb533                lib_dlna_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libwt.a(version.z.o)
+                0x020eb533                lib_wt_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
+                0x020eb533                lib_tencent_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/websocket.a(version.z.o)
+                0x020eb533                lib_websocket_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/iperf.a(version.z.o)
+                0x020eb533                lib_iperf_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
+                0x020eb533                lib_tmallgenie_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
+                0x020eb533                lib_cjson_version
+ .sys.version   0x020eb533        0x0 ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
+                0x020eb533                lib_ftpserver_version
+ .sys.version   0x020eb533       0x12 ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
+                0x020eb533                lib_btctler_version
+ .sys.version   0x020eb545       0x11 ../../../../cpu/wl82/liba/btstack.a(version.z.o)
+                0x020eb545                lib_btstack_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
+                0x020eb556                lib_crcm_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
+                0x020eb556                lib_btmesh_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
+                0x020eb556                lib_cryto_toolbox_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
+                0x020eb556                lib_video_dec_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/ui.a(version.z.o)
+                0x020eb556                lib_ui_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/res.a(version.z.o)
+                0x020eb556                lib_res_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/font.a(version.z.o)
+                0x020eb556                lib_font_version
+ .sys.version   0x020eb556        0x0 ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
+                0x020eb556                lib_ui_draw_version
+                0x020eb556                __VERSION_END = .
+                0x020eb556                crypto_begin = .
  *(.crypto_ecdh_code)
  *(.crypto_ecdh_const)
  *(.crypto_bigint_code)
  .crypto_bigint_code
-                0x020eb526      0x42e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020eb556      0x42e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.crypto_bigint_const)
  *(.crypto_code)
- .crypto_code   0x020eb954      0x42e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .crypto_code   0x020eb984      0x42e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.crypto_const)
- *fill*         0x020ebd82        0x2 
- .crypto_const  0x020ebd84      0x171 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ *fill*         0x020ebdb2        0x2 
+ .crypto_const  0x020ebdb4      0x171 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ECDH_sample_code)
  *(.ECDH_sample_const)
  *(.uECC_code)
- *fill*         0x020ebef5        0x1 
- .uECC_code     0x020ebef6      0xc16 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ *fill*         0x020ebf25        0x1 
+ .uECC_code     0x020ebf26      0xc16 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.uECC_const)
- .uECC_const    0x020ecb0c       0xb0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .uECC_const    0x020ecb3c       0xb0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.hmac_code)
- .hmac_code     0x020ecbbc      0x41c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .hmac_code     0x020ecbec      0x41c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.hmac_const)
  *(.hash_sample_code)
  *(.hash_sample_const)
  *(.aes_cmac_sample_code)
  *(.aes_cmac_sample_const)
-                0x020ecfd8                crypto_end = .
+                0x020ed008                crypto_end = .
                 0x00001ab2                crypto_size = (. - crypto_begin)
  *(.jlsp_code)
- .jlsp_code     0x020ecfd8     0x2560 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020ef538                . = ALIGN (0x4)
+ .jlsp_code     0x020ed008     0x2560 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020ef568                . = ALIGN (0x4)
  *(.jlsp_const)
- .jlsp_const    0x020ef538      0x484 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020ef9bc                . = ALIGN (0x4)
+ .jlsp_const    0x020ef568      0x484 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020ef9ec                . = ALIGN (0x4)
  *(.dns_common_data)
  .dns_common_data
-                0x020ef9bc     0x4e00 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020f47bc                . = ALIGN (0x4)
+                0x020ef9ec     0x4e00 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020f47ec                . = ALIGN (0x4)
  *(.dns_16k_data)
- .dns_16k_data  0x020f47bc     0x3700 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020f7ebc                . = ALIGN (0x4)
+ .dns_16k_data  0x020f47ec     0x3700 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020f7eec                . = ALIGN (0x4)
  *(.dns_8k_data)
- .dns_8k_data   0x020f7ebc     0x3700 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020fb5bc                . = ALIGN (0x4)
+ .dns_8k_data   0x020f7eec     0x3700 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fb5ec                . = ALIGN (0x4)
  *(.dns_param_data_single)
  .dns_param_data_single
-                0x020fb5bc      0x1f8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020fb7b4                . = ALIGN (0x4)
+                0x020fb5ec      0x1f8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fb7e4                . = ALIGN (0x4)
  *(.dns_param_data_dual)
  *(.sms_code)
- .sms_code      0x020fb7b4      0x7da ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .sms_code      0x020fb7e4      0x7da ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.sms_sparse_code)
  .sms_sparse_code
-                0x020fbf8e      0x762 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020fc6f0                . = ALIGN (0x4)
+                0x020fbfbe      0x762 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fc720                . = ALIGN (0x4)
  *(.opcore_maskrom)
  .opcore_maskrom
-                0x020fc6f0      0x768 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x020fce58                . = ALIGN (0x4)
+                0x020fc720      0x768 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fce88                . = ALIGN (0x4)
  *(.sms_const)
- .sms_const     0x020fce58        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .sms_const     0x020fce88        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.audio_vbass_code)
  *(.audio_vbass_const)
  *(.vbss_code)
- .vbss_code     0x020fce60      0x9ae ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .vbss_code     0x020fce90      0x9ae ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.vbss_const)
  *(.vbss_sparse_code)
  .vbss_sparse_code
-                0x020fd80e      0x17c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fd83e      0x17c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.vbss_sparse_const)
  .vbss_sparse_const
-                0x020fd98a       0xca ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020fd9ba       0xca ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.adpcm_encode_code)
  .adpcm_encode_code
-                0x020fda54      0x508 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
-                0x020fdaca                adpcm_coder
+                0x020fda84      0x508 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+                0x020fdafa                adpcm_coder
  *(.adpcm_encode_sparse_code)
  .adpcm_encode_sparse_code
-                0x020fdf5c      0x17a ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
-                0x020fe0ce                get_msenadpcm_ops
+                0x020fdf8c      0x17a ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+                0x020fe0fe                get_msenadpcm_ops
  *(.adpcm_encode_const)
- *fill*         0x020fe0d6        0x2 
+ *fill*         0x020fe106        0x2 
  .adpcm_encode_const
-                0x020fe0d8       0x18 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
-                0x020fe0d8                msadpcmcontobj_ops
+                0x020fe108       0x18 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+                0x020fe108                msadpcmcontobj_ops
  .adpcm_encode_const
-                0x020fe0f0       0x78 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
-                0x020fe0f0                ms_AdaptCoeff1
-                0x020fe10c                ms_AdaptCoeff2
+                0x020fe120       0x78 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+                0x020fe120                ms_AdaptCoeff1
+                0x020fe13c                ms_AdaptCoeff2
  *(.adpcm_encode_sparse_const)
  *(.dts_dec_code)
- .dts_dec_code  0x020fe168     0x14c8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .dts_dec_code  0x020ff630      0x158 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
-                0x020ff630                qmf_32_subbands
+ .dts_dec_code  0x020fe198     0x14c8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .dts_dec_code  0x020ff660      0x158 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
+                0x020ff660                qmf_32_subbands
  *(.dts_dec_const)
  .dts_dec_const
-                0x020ff788     0x9100 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x020ff7b8     0x9100 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.dts_dec_ff_const)
  .dts_dec_ff_const
-                0x02108888    0x11000 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x021088b8    0x11000 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.dts_dec_sparse_code)
  .dts_dec_sparse_code
-                0x02119888      0x280 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x021198b8      0x280 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.dts_dec_sparse_const)
  *(.wtgv2dec_code)
  .wtgv2dec_code
-                0x02119b08     0x2062 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02119b38     0x2062 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wtg_decv2_sparse_code)
  .wtg_decv2_sparse_code
-                0x0211bb6a      0x1e6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0211bb9a      0x1e6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wtgv2dec_const)
  .wtgv2dec_const
-                0x0211bd50     0x1580 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0211bd80     0x1580 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wtgv2dec_str)
- .wtgv2dec_str  0x0211d2d0        0x6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .wtgv2dec_str  0x0211d300        0x6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.mp3_dec_sparse_code)
  .mp3_dec_sparse_code
-                0x0211d2d6     0x1918 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0211d306     0x1918 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.mp3_dec_sparse_const)
  *(.mp3_dec_code)
- .mp3_dec_code  0x0211ebee     0x2ee6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .mp3_dec_code  0x0211ec1e     0x2ee6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.mp3_dec_const)
  .mp3_dec_const
-                0x02121ad4     0x290a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02121b04     0x290a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.flac_dec_sparse_code)
  .flac_dec_sparse_code
-                0x021243de      0x538 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212440e      0x538 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.flac_dec_sparse_const)
  *(.flac_dec_code)
  .flac_dec_code
-                0x02124916     0x17de ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02124946     0x17de ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.flac_dec_const)
  .flac_dec_const
-                0x021260f4      0x12c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02126124      0x12c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.crossOver_sparse_code)
  .crossOver_sparse_code
-                0x02126220       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02126250       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wav_dec_sparse_code)
  .wav_dec_sparse_code
-                0x0212624c      0x6c0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212627c      0x6c0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wav_dec_sparse_const)
  *(.wav_dec_code)
- .wav_dec_code  0x0212690c     0x160a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .wav_dec_code  0x0212693c     0x160a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.wav_dec_const)
- *fill*         0x02127f16        0x2 
+ *fill*         0x02127f46        0x2 
  .wav_dec_const
-                0x02127f18      0x228 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02127f48      0x228 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ape_dec_code)
- .ape_dec_code  0x02128140     0x13ee ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- *fill*         0x0212952e        0x2 
- .ape_dec_code  0x02129530      0x274 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
-                0x02129530                do_apply_filter
-                0x02129620                predictor_decode_stereo
+ .ape_dec_code  0x02128170     0x13ee ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ *fill*         0x0212955e        0x2 
+ .ape_dec_code  0x02129560      0x274 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
+                0x02129560                do_apply_filter
+                0x02129650                predictor_decode_stereo
  *(.ape_dec_const)
  .ape_dec_const
-                0x021297a4      0x17c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x021297d4      0x17c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ape_dec_sparse_code)
  .ape_dec_sparse_code
-                0x02129920      0x64c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02129950      0x64c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ape_dec_sparse_const)
  *(.bt_audioplc_code)
  .bt_audioplc_code
-                0x02129f6c      0x456 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02129f9c      0x456 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.bt_audioplc_sparse_code)
  .bt_audioplc_sparse_code
-                0x0212a3c2       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212a3f2       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.bt_audioplc_const)
- *fill*         0x0212a3ee        0x2 
+ *fill*         0x0212a41e        0x2 
  .bt_audioplc_const
-                0x0212a3f0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212a420        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.plc_code)
  *(.plc_const)
  *(.sbc_eng_code)
- .sbc_eng_code  0x0212a3fc       0xc4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0212a4c0                . = ALIGN (0x4)
-                0x0212a4c0                btctler_code_start = .
-                0x0212a4c0                BTCTLER_CONTROLLER_CODE_START = .
+ .sbc_eng_code  0x0212a42c       0xc4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212a4f0                . = ALIGN (0x4)
+                0x0212a4f0                btctler_code_start = .
+                0x0212a4f0                BTCTLER_CONTROLLER_CODE_START = .
  *(.bt_rf_const)
- .bt_rf_const   0x0212a4c0      0x240 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .bt_rf_const   0x0212a4f0      0x240 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.bt_rf_code)
- .bt_rf_code    0x0212a700     0x148e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .bt_rf_code    0x0212a730     0x148e ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.vendor_manager_const)
  *(.vendor_manager_code)
  *(.device_manager_const)
  *(.device_manager_code)
  *(.hci_controller_const)
- *fill*         0x0212bb8e        0x2 
+ *fill*         0x0212bbbe        0x2 
  .hci_controller_const
-                0x0212bb90       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212bbc0       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.hci_controller_code)
  .hci_controller_code
-                0x0212bbb8      0x790 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212bbe8      0x790 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.hci_interface_const)
  *(.hci_interface_code)
                 0x00001e88                BTCTLER_CONTROLLER_CODE_SIZE = ABSOLUTE ((. - BTCTLER_CONTROLLER_CODE_START))
-                0x0212c348                BTCTLER_LE_CONTROLLER_CODE_START = .
+                0x0212c378                BTCTLER_LE_CONTROLLER_CODE_START = .
  *(.ble_rf_const)
  *(.ble_rf_code)
  *(.ble_ll_const)
@@ -4134,90 +4133,88 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
  *(.ble_hci_const)
  *(.ble_hci_code)
                 0x00000000                BTCTLER_LE_CONTROLLER_CODE_SIZE = ABSOLUTE ((. - BTCTLER_LE_CONTROLLER_CODE_START))
-                0x0212c348                BTCTLER_CL_CODE_START = .
+                0x0212c378                BTCTLER_CL_CODE_START = .
  *(.bredr_irq)
  *(.bredr_irq_code)
  *(.bredr_irq_const)
  *(.classic_lmp_const)
  .classic_lmp_const
-                0x0212c348       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212c378       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_lmp_linkbulk_const)
  *(.classic_lmp_code)
  .classic_lmp_code
-                0x0212c35c     0x9654 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0212c38c     0x9656 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_lmp_linkbulk_code)
  *(.classic_hci_const)
  *(.classic_hci_code)
-                0x021359b0                LMP_ENC_CODE_START = .
+                0x021359e2                LMP_ENC_CODE_START = .
  *(.classic_lmp_auth_const)
  .classic_lmp_auth_const
-                0x021359b0      0x4f0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x021359e2      0x4f0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_lmp_bigint_const)
  *(.classic_lmp_crypt_const)
  *(.classic_lmp_ecdh_const)
  *(.classic_lmp_hmac_const)
  *(.classic_lmp_auth_code)
  .classic_lmp_auth_code
-                0x02135ea0      0x772 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02135ed2      0x772 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_lmp_bigint_code)
  *(.classic_lmp_crypt_code)
  *(.classic_lmp_ecdh_code)
  *(.classic_lmp_hmac_code)
                 0x00000c62                LMP_ENC_CODE_SIZE = ABSOLUTE ((. - LMP_ENC_CODE_START))
  *(.classic_rf_const)
- *fill*         0x02136612        0x2 
  .classic_rf_const
-                0x02136614      0x741 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02136644      0x741 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_rf_code)
- *fill*         0x02136d55        0x1 
+ *fill*         0x02136d85        0x1 
  .classic_rf_code
-                0x02136d56     0x652a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x02136d86     0x652a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_bb_const)
  *(.classic_bb_code)
                 0x00010f38                BTCTLER_CL_CODE_SIZE = ABSOLUTE ((. - BTCTLER_CL_CODE_START))
-                0x0213d280                . = ALIGN (0x4)
+                0x0213d2b0                . = ALIGN (0x4)
  *(.classic_tws_const)
  *(.classic_tws_code)
  .classic_tws_code
-                0x0213d280       0x1a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213d2b0       0x1a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.classic_tws_code.esco)
  *(.tws_media_sync_code)
  *(.tws_media_sync_const)
  *(.tws_data_forward_code)
  *(.tws_data_forward_const)
-                0x0213d29c                . = ALIGN (0x4)
- *fill*         0x0213d29a        0x2 
-                0x0213d29c                tws_func_stub_begin = .
+                0x0213d2cc                . = ALIGN (0x4)
+ *fill*         0x0213d2ca        0x2 
+                0x0213d2cc                tws_func_stub_begin = .
  *(.tws_func_stub)
  .tws_func_stub
-                0x0213d29c        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213d2a4                tws_func_stub_end = .
+                0x0213d2cc        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213d2d4                tws_func_stub_end = .
  *(.lmp_irq_code)
- .lmp_irq_code  0x0213d2a4      0x254 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .lmp_irq_code  0x0213d2d4      0x254 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.link_bulk_code)
  .link_bulk_code
-                0x0213d4f8      0x6d6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213d528      0x6d8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.frame_irq_code)
-                0x0213dbd0                . = ALIGN (0x4)
- *fill*         0x0213dbce        0x2 
+                0x0213dc00                . = ALIGN (0x4)
  *(.link_task_const)
  .link_task_const
-                0x0213dbd0        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213dc00        0x8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.link_task_code)
  .link_task_code
-                0x0213dbd8      0xb86 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e760                . = ALIGN (0x4)
- *fill*         0x0213e75e        0x2 
+                0x0213dc08      0xb86 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e790                . = ALIGN (0x4)
+ *fill*         0x0213e78e        0x2 
  *(.classic_irq_const)
  *(.classic_irq_code)
-                0x0213e760                . = ALIGN (0x4)
+                0x0213e790                . = ALIGN (0x4)
  *(.tws_irq_code)
-                0x0213e760                . = ALIGN (0x4)
-                0x0213e760                tws_sync_call_begin = .
+                0x0213e790                . = ALIGN (0x4)
+                0x0213e790                tws_sync_call_begin = .
  *(.tws_sync_call)
-                0x0213e760                tws_sync_call_end = .
-                0x0213e760                . = ALIGN (0x4)
-                0x0213e760                tws_sync_channel_begin = .
+                0x0213e790                tws_sync_call_end = .
+                0x0213e790                . = ALIGN (0x4)
+                0x0213e790                tws_sync_channel_begin = .
  *(.tws_sync_channel.0)
  *(.tws_sync_channel.1)
  *(.tws_sync_channel.2)
@@ -4232,71 +4229,71 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
  *(.tws_sync_channel.11)
  *(.tws_sync_channel.12)
  *(.tws_sync_channel.13)
-                0x0213e760                tws_sync_channel_end = .
-                0x0213e760                btctler_code_end = .
-                0x0213e760                . = ALIGN (0x4)
-                0x0213e760                . = ALIGN (0x4)
-                0x0213e760                btstack_code_start = .
-                0x0213e760                . = ALIGN (0x4)
-                0x0213e760                a2dp_source_media_codec_begin = .
+                0x0213e790                tws_sync_channel_end = .
+                0x0213e790                btctler_code_end = .
+                0x0213e790                . = ALIGN (0x4)
+                0x0213e790                . = ALIGN (0x4)
+                0x0213e790                btstack_code_start = .
+                0x0213e790                . = ALIGN (0x4)
+                0x0213e790                a2dp_source_media_codec_begin = .
  *(.a2dp_source_media_codec)
  .a2dp_source_media_codec
-                0x0213e760       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e760                a2dp_source_jla_codec
-                0x0213e778                a2dp_source_sbc_codec
-                0x0213e790                a2dp_source_media_codec_end = .
-                0x0213e790                a2dp_sink_media_probe_begin = .
+                0x0213e790       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e790                a2dp_source_jla_codec
+                0x0213e7a8                a2dp_source_sbc_codec
+                0x0213e7c0                a2dp_source_media_codec_end = .
+                0x0213e7c0                a2dp_sink_media_probe_begin = .
  *(.a2dp_sink_media_probe)
-                0x0213e790                a2dp_sink_media_probe_end = .
-                0x0213e790                a2dp_sink_media_codec_begin = .
+                0x0213e7c0                a2dp_sink_media_probe_end = .
+                0x0213e7c0                a2dp_sink_media_codec_begin = .
  *(.a2dp_sink_media_codec)
  .a2dp_sink_media_codec
-                0x0213e790       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e790                a2dp_1sbc_codec_private
-                0x0213e7a8                a2dp_2aac_sink_codec
-                0x0213e7c0                a2dp_sink_media_codec_end = .
-                0x0213e7c0                a2dp_event_handler_begin = .
+                0x0213e7c0       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e7c0                a2dp_1sbc_codec_private
+                0x0213e7d8                a2dp_2aac_sink_codec
+                0x0213e7f0                a2dp_sink_media_codec_end = .
+                0x0213e7f0                a2dp_event_handler_begin = .
  *(.a2dp_event_handler)
  .a2dp_event_handler
-                0x0213e7c0       0x70 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e7c0                a2dp_sink_event_handler
-                0x0213e7dc                a2dp_source_event_handler
-                0x0213e7f8                acp_a2dp_event_handler
-                0x0213e814                acp_a2dp_src_event_handler
-                0x0213e830                a2dp_event_handler_end = .
-                0x0213e830                sdp_record_item_begin = .
+                0x0213e7f0       0x70 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e7f0                a2dp_sink_event_handler
+                0x0213e80c                a2dp_source_event_handler
+                0x0213e828                acp_a2dp_event_handler
+                0x0213e844                acp_a2dp_src_event_handler
+                0x0213e860                a2dp_event_handler_end = .
+                0x0213e860                sdp_record_item_begin = .
  *(.sdp_record_item)
  .sdp_record_item
-                0x0213e830       0x60 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e830                a2dp_sdp_record_item
-                0x0213e83c                a2dp_src_sdp_record_item
-                0x0213e848                arp_ct_sdp_record_item
-                0x0213e854                arp_ta_sdp_record_item
-                0x0213e860                hfp_ag_sdp_record_item
-                0x0213e86c                pbap_sdp_record_item
-                0x0213e878                spp_sdp_record_item
-                0x0213e884                spp_user_sdp_record_item
-                0x0213e890                sdp_record_item_end = .
-                0x0213e890                bt_sleep_begin = .
+                0x0213e860       0x60 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e860                a2dp_sdp_record_item
+                0x0213e86c                a2dp_src_sdp_record_item
+                0x0213e878                arp_ct_sdp_record_item
+                0x0213e884                arp_ta_sdp_record_item
+                0x0213e890                hfp_ag_sdp_record_item
+                0x0213e89c                pbap_sdp_record_item
+                0x0213e8a8                spp_sdp_record_item
+                0x0213e8b4                spp_user_sdp_record_item
+                0x0213e8c0                sdp_record_item_end = .
+                0x0213e8c0                bt_sleep_begin = .
  *(.bt_sleep)
- .bt_sleep      0x0213e890       0x78 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0213e890                bt_suspend_a2dp_resumea2dp_release
-                0x0213e89c                bt_suspend_avctp_resumeavctp_release
-                0x0213e8a8                bt_suspend_hfp_resumehfp_release
-                0x0213e8b4                bt_suspend_hid_resumehid_release
-                0x0213e8c0                bt_suspend_spp_resumespp_release
-                0x0213e8cc                bt_suspend_iap_resumeiap_release
-                0x0213e8d8                bt_suspend_sdp_resumesdp_release
-                0x0213e8e4                bt_suspend_user_cmd_loop_resumeuser_cmd_loop_release
-                0x0213e8f0                bt_suspend_spp_up_resumespp_up_release
-                0x0213e8fc                bt_suspend_pan_loop_resumepan_loop_release
-                0x0213e908                bt_sleep_end = .
+ .bt_sleep      0x0213e8c0       0x78 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e8c0                bt_suspend_a2dp_resumea2dp_release
+                0x0213e8cc                bt_suspend_avctp_resumeavctp_release
+                0x0213e8d8                bt_suspend_hfp_resumehfp_release
+                0x0213e8e4                bt_suspend_hid_resumehid_release
+                0x0213e8f0                bt_suspend_spp_resumespp_release
+                0x0213e8fc                bt_suspend_iap_resumeiap_release
+                0x0213e908                bt_suspend_sdp_resumesdp_release
+                0x0213e914                bt_suspend_user_cmd_loop_resumeuser_cmd_loop_release
+                0x0213e920                bt_suspend_spp_up_resumespp_up_release
+                0x0213e92c                bt_suspend_pan_loop_resumepan_loop_release
+                0x0213e938                bt_sleep_end = .
  *(.bt_stack_const)
  .bt_stack_const
-                0x0213e908      0x5cc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213e938      0x5cc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.bt_stack_code)
  .bt_stack_code
-                0x0213eed4     0xb524 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0213ef04     0xb51c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ble_db_const)
  *(.ble_db_code)
  *(.ble_sm_const)
@@ -4305,54 +4302,54 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
  *(.ble_att_code)
  *(.ble_gatt_const)
  *(.ble_gatt_code)
-                0x0214a3f8                BTSTACK_LE_HOST_MESH_CODE_START = .
+                0x0214a420                BTSTACK_LE_HOST_MESH_CODE_START = .
  *(.ble_mesh_code)
  *(.ble_mesh_tinycrypt_code)
  *(.ble_mesh_const)
  *(.ble_mesh_tinycrypt_const)
                 0x00000000                BTSTACK_LE_HOST_MESH_CODE_SIZE = ABSOLUTE ((. - BTSTACK_LE_HOST_MESH_CODE_START))
-                0x0214a3f8                btstack_code_end = .
-                0x0214a3f8                . = ALIGN (0x4)
-                0x0000bc98                BTSTACK_CODE_TOTAL_SIZE = (btstack_code_end - btstack_code_start)
-                0x0214a3f8                . = ALIGN (0x4)
-                0x0214a3f8                lcd_interface_begin = .
+                0x0214a420                btstack_code_end = .
+                0x0214a420                . = ALIGN (0x4)
+                0x0000bc90                BTSTACK_CODE_TOTAL_SIZE = (btstack_code_end - btstack_code_start)
+                0x0214a420                . = ALIGN (0x4)
+                0x0214a420                lcd_interface_begin = .
  *(.lcd_if_info)
- .lcd_if_info   0x0214a3f8       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0214a424                lcd_interface_end = .
-                0x0214a424                ui_style_begin = .
+ .lcd_if_info   0x0214a420       0x2c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0214a44c                lcd_interface_end = .
+                0x0214a44c                ui_style_begin = .
  *(.ui_style)
- .ui_style      0x0214a424      0x168 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0214a58c                ui_style_end = .
-                0x0214a58c                elm_event_handler_begin_JL = .
+ .ui_style      0x0214a44c      0x168 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0214a5b4                ui_style_end = .
+                0x0214a5b4                elm_event_handler_begin_JL = .
  *(.elm_event_handler_JL)
-                0x0214a58c                elm_event_handler_end_JL = .
-                0x0214a58c                elm_event_handler_begin_UPGRADE = .
+                0x0214a5b4                elm_event_handler_end_JL = .
+                0x0214a5b4                elm_event_handler_begin_UPGRADE = .
  *(.elm_event_handler_UPGRADE)
-                0x0214a58c                elm_event_handler_end_UPGRADE = .
-                0x0214a58c                elm_event_handler_begin_DIAL = .
+                0x0214a5b4                elm_event_handler_end_UPGRADE = .
+                0x0214a5b4                elm_event_handler_begin_DIAL = .
  *(.elm_event_handler_DIAL)
-                0x0214a58c                elm_event_handler_end_DIAL = .
-                0x0214a58c                control_event_handler_begin = .
+                0x0214a5b4                elm_event_handler_end_DIAL = .
+                0x0214a5b4                control_event_handler_begin = .
  *(.control_event_handler)
-                0x0214a58c                control_event_handler_end = .
-                0x0214a58c                control_ops_begin = .
+                0x0214a5b4                control_event_handler_end = .
+                0x0214a5b4                control_ops_begin = .
  *(.control_ops)
- .control_ops   0x0214a58c       0x68 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0214a5f4                control_ops_end = .
-                0x0214a5f4                battery_notify_begin = .
+ .control_ops   0x0214a5b4       0x68 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0214a61c                control_ops_end = .
+                0x0214a61c                battery_notify_begin = .
  *(.battery_notify)
-                0x0214a5f4                battery_notify_end = .
+                0x0214a61c                battery_notify_end = .
  *(*.rf.text.cache.L2.rf_trim)
  .rf.text.cache.L2.rf_trim
-                0x0214a5f4      0xdbc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0214b3c0                . = ALIGN (0x20)
- *fill*         0x0214b3b0       0x10 
-                0x0214b3c0                _text_rodata_end = .
+                0x0214a61c      0xdbc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0214b3e0                . = ALIGN (0x20)
+ *fill*         0x0214b3d8        0x8 
+                0x0214b3e0                _text_rodata_end = .
                 [!provide]                PROVIDE (text_rodata_end, .)
 
-.jlsp_dns_code  0x0214b3c0       0x42
+.jlsp_dns_code  0x0214b3e0       0x42
  .jlsp_dns_code
-                0x0214b3c0       0x42 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0214b3e0       0x42 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
                 0x04000120                . = ORIGIN (sdram)
 
 .data           0x04000120     0xa750
@@ -4394,436 +4391,437 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
                 0x04007680                . = ALIGN (0x4)
  *fill*         0x0400767e        0x2 
  *(.ui_ram)
- .ui_ram        0x04007680      0x4ac ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007b2c                . = ALIGN (0x4)
-                0x04007b2c                _vfs_ops_begin = .
-                0x04007b2c                PROVIDE (vfs_ops_begin, .)
+ .ui_ram        0x04007680      0x4ae ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007b30                . = ALIGN (0x4)
+ *fill*         0x04007b2e        0x2 
+                0x04007b30                _vfs_ops_begin = .
+                0x04007b30                PROVIDE (vfs_ops_begin, .)
  *(.vfs_operations)
  .vfs_operations
-                0x04007b2c      0x258 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007b2c                nor_sdfile_vfs_ops
-                0x04007ba4                sdfile_vfs_ops
-                0x04007c1c                sdfile_ext_vfs_ops
-                0x04007c94                fat_sdfile_fat_ops
-                0x04007d0c                jl_fat_vfs_ops
-                0x04007d84                _vfs_ops_end = .
-                0x04007d84                PROVIDE (vfs_ops_end, .)
-                0x04007d84                _initcall_begin = .
-                0x04007d84                PROVIDE (initcall_begin, .)
+                0x04007b30      0x258 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007b30                nor_sdfile_vfs_ops
+                0x04007ba8                sdfile_vfs_ops
+                0x04007c20                sdfile_ext_vfs_ops
+                0x04007c98                fat_sdfile_fat_ops
+                0x04007d10                jl_fat_vfs_ops
+                0x04007d88                _vfs_ops_end = .
+                0x04007d88                PROVIDE (vfs_ops_end, .)
+                0x04007d88                _initcall_begin = .
+                0x04007d88                PROVIDE (initcall_begin, .)
  *(.initcall)
- .initcall      0x04007d84       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007d84                __initcall_app_update_init
-                0x04007d88                __initcall_audio_server_init
-                0x04007d8c                __initcall_video_server_init
-                0x04007d90                __initcall_vpkg_server_init
-                0x04007d94                _initcall_end = .
-                0x04007d94                PROVIDE (initcall_end, .)
-                0x04007d94                _early_initcall_begin = .
-                0x04007d94                PROVIDE (early_initcall_begin, .)
+ .initcall      0x04007d88       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007d88                __initcall_app_update_init
+                0x04007d8c                __initcall_audio_server_init
+                0x04007d90                __initcall_video_server_init
+                0x04007d94                __initcall_vpkg_server_init
+                0x04007d98                _initcall_end = .
+                0x04007d98                PROVIDE (initcall_end, .)
+                0x04007d98                _early_initcall_begin = .
+                0x04007d98                PROVIDE (early_initcall_begin, .)
  *(.early.initcall)
  .early.initcall
-                0x04007d94       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007d94                __initcall___sd_mutex_init
-                0x04007d98                __initcall_app_version_check
-                0x04007d9c                __initcall_usb_host_mutex_init
-                0x04007da0                __initcall_usb_memory_init
-                0x04007da4                __initcall_sys_event_init
-                0x04007da8                __initcall_thread_fork_init
-                0x04007dac                __initcall_sdfile_init
-                0x04007db0                __initcall_ntp_client_init
-                0x04007db4                _early_initcall_end = .
-                0x04007db4                PROVIDE (early_initcall_end, .)
-                0x04007db4                _late_initcall_begin = .
-                0x04007db4                PROVIDE (late_initcall_begin, .)
+                0x04007d98       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007d98                __initcall___sd_mutex_init
+                0x04007d9c                __initcall_app_version_check
+                0x04007da0                __initcall_usb_host_mutex_init
+                0x04007da4                __initcall_usb_memory_init
+                0x04007da8                __initcall_sys_event_init
+                0x04007dac                __initcall_thread_fork_init
+                0x04007db0                __initcall_sdfile_init
+                0x04007db4                __initcall_ntp_client_init
+                0x04007db8                _early_initcall_end = .
+                0x04007db8                PROVIDE (early_initcall_end, .)
+                0x04007db8                _late_initcall_begin = .
+                0x04007db8                PROVIDE (late_initcall_begin, .)
  *(.late.initcall)
  .late.initcall
-                0x04007db4       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007db4                __initcall_config_save_flash
-                0x04007db8                __initcall_UserAudioDeviceTaskStart
-                0x04007dbc                __initcall_camera_to_lcd_init
-                0x04007dc0                __initcall_sdk_meky_check
-                0x04007dc4                _late_initcall_end = .
-                0x04007dc4                PROVIDE (late_initcall_end, .)
-                0x04007dc4                _platform_initcall_begin = .
-                0x04007dc4                PROVIDE (platform_initcall_begin, .)
+                0x04007db8       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007db8                __initcall_config_save_flash
+                0x04007dbc                __initcall_UserAudioDeviceTaskStart
+                0x04007dc0                __initcall_camera_to_lcd_init
+                0x04007dc4                __initcall_sdk_meky_check
+                0x04007dc8                _late_initcall_end = .
+                0x04007dc8                PROVIDE (late_initcall_end, .)
+                0x04007dc8                _platform_initcall_begin = .
+                0x04007dc8                PROVIDE (platform_initcall_begin, .)
  *(.platform.initcall)
  .platform.initcall
-                0x04007dc4        0x4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007dc4                __initcall_syscfg_tools_init
-                0x04007dc8                _platform_initcall_end = .
-                0x04007dc8                PROVIDE (platform_initcall_end, .)
-                0x04007dc8                _module_initcall_begin = .
-                0x04007dc8                PROVIDE (module_initcall_begin, .)
+                0x04007dc8        0x4 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007dc8                __initcall_syscfg_tools_init
+                0x04007dcc                _platform_initcall_end = .
+                0x04007dcc                PROVIDE (platform_initcall_end, .)
+                0x04007dcc                _module_initcall_begin = .
+                0x04007dcc                PROVIDE (module_initcall_begin, .)
  *(.module.initcall)
  .module.initcall
-                0x04007dc8        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007dc8                __initcall_hw_iic_ops_link
-                0x04007dcc                __initcall_link_sw_iic0_data
-                0x04007dd0                __initcall_wait_completion_init
-                0x04007dd4                _module_initcall_end = .
-                0x04007dd4                PROVIDE (module_initcall_end, .)
-                0x04007dd4                _sys_event_handler_begin = .
-                0x04007dd4                PROVIDE (sys_event_handler_begin, .)
+                0x04007dcc        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007dcc                __initcall_hw_iic_ops_link
+                0x04007dd0                __initcall_link_sw_iic0_data
+                0x04007dd4                __initcall_wait_completion_init
+                0x04007dd8                _module_initcall_end = .
+                0x04007dd8                PROVIDE (module_initcall_end, .)
+                0x04007dd8                _sys_event_handler_begin = .
+                0x04007dd8                PROVIDE (sys_event_handler_begin, .)
  *(.sys_event.*)
  .sys_event.device_event
-                0x04007dd4        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007dd4                __static_event_device_event
+                0x04007dd8        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007dd8                __static_event_device_event
  .sys_event.sys_power_enent
-                0x04007de0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007de0                __static_event_sys_power_enent
+                0x04007de4        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007de4                __static_event_sys_power_enent
  .sys_event.key_event
-                0x04007dec        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007dec                __static_event_key_event
+                0x04007df0        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007df0                __static_event_key_event
  .sys_event.tws_event
-                0x04007df8        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007df8                __static_event_tws_event
-                0x04007e04                _sys_event_handler_end = .
-                0x04007e04                PROVIDE (sys_event_handler_end, .)
-                0x04007e04                _syscfg_ops_begin = .
-                0x04007e04                PROVIDE (syscfg_ops_begin, .)
+                0x04007dfc        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007dfc                __static_event_tws_event
+                0x04007e08                _sys_event_handler_end = .
+                0x04007e08                PROVIDE (sys_event_handler_end, .)
+                0x04007e08                _syscfg_ops_begin = .
+                0x04007e08                PROVIDE (syscfg_ops_begin, .)
  *(.syscfg.2.ops)
- .syscfg.2.ops  0x04007e04       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007e04                cfg_btif
+ .syscfg.2.ops  0x04007e08       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007e08                cfg_btif
  *(.syscfg.1.ops)
- .syscfg.1.ops  0x04007e20       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007e20                cfg_vm
+ .syscfg.1.ops  0x04007e24       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007e24                cfg_vm
  *(.syscfg.0.ops)
- .syscfg.0.ops  0x04007e3c       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007e3c                cfg_bin
-                0x04007e58                _syscfg_ops_end = .
-                0x04007e58                PROVIDE (syscfg_ops_end, .)
-                0x04007e58                _server_info_begin = .
-                0x04007e58                PROVIDE (server_info_begin, .)
+ .syscfg.0.ops  0x04007e40       0x1c ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007e40                cfg_bin
+                0x04007e5c                _syscfg_ops_end = .
+                0x04007e5c                PROVIDE (syscfg_ops_end, .)
+                0x04007e5c                _server_info_begin = .
+                0x04007e5c                PROVIDE (server_info_begin, .)
  *(.server_info)
- .server_info   0x04007e58       0x50 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007e58                audio_server_info
-                0x04007e68                video_server_info
-                0x04007e78                vpkg_server_info
-                0x04007e88                video_dec_server_info
-                0x04007e98                vunpkg_server_info
-                0x04007ea8                _server_info_end = .
-                0x04007ea8                PROVIDE (server_info_end, .)
-                0x04007ea8                _bus_device_begin = .
+ .server_info   0x04007e5c       0x50 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007e5c                audio_server_info
+                0x04007e6c                video_server_info
+                0x04007e7c                vpkg_server_info
+                0x04007e8c                video_dec_server_info
+                0x04007e9c                vunpkg_server_info
+                0x04007eac                _server_info_end = .
+                0x04007eac                PROVIDE (server_info_end, .)
+                0x04007eac                _bus_device_begin = .
                 [!provide]                PROVIDE (bus_device_begin, .)
  *(.bus_device)
-                0x04007ea8                _bus_device_end = .
+                0x04007eac                _bus_device_end = .
                 [!provide]                PROVIDE (bus_device_end, .)
-                0x04007ea8                _cmd_interface_begin = .
+                0x04007eac                _cmd_interface_begin = .
                 [!provide]                PROVIDE (cmd_interface_begin, .)
  *(.eff_cmd)
-                0x04007ea8                _cmd_interface_end = .
+                0x04007eac                _cmd_interface_end = .
                 [!provide]                PROVIDE (cmd_interface_end, .)
-                0x04007ea8                _snap_interface_begin = .
+                0x04007eac                _snap_interface_begin = .
                 [!provide]                PROVIDE (snap_interface_begin, .)
  *(.snap_parm)
-                0x04007ea8                _snap_interface_end = .
+                0x04007eac                _snap_interface_end = .
                 [!provide]                PROVIDE (snap_interface_end, .)
-                0x04007ea8                _device_node_begin = .
-                0x04007ea8                PROVIDE (device_node_begin, .)
+                0x04007eac                _device_node_begin = .
+                0x04007eac                PROVIDE (device_node_begin, .)
  *(.device)
- .device        0x04007ea8       0xcc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007ea8                device_table
-                0x04007f74                _device_node_end = .
-                0x04007f74                PROVIDE (device_node_end, .)
-                0x04007f74                lp_target_begin = .
+ .device        0x04007eac       0xcc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007eac                device_table
+                0x04007f78                _device_node_end = .
+                0x04007f78                PROVIDE (device_node_end, .)
+                0x04007f78                lp_target_begin = .
                 [!provide]                PROVIDE (lp_target_begin, .)
  *(.lp_target)
- .lp_target     0x04007f74       0xb8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04007f74                iic_lp_target
-                0x04007f7c                adc_scan_lp_target
-                0x04007f84                key_lp_target
-                0x04007f8c                ota_lp_target
-                0x04007f94                usr_systimer_lp_target
-                0x04007f9c                vm_lp_target
-                0x04007fa4                uart_lp_target
-                0x04007fac                spi_lp_target
-                0x04007fb4                sys_power_lp_target
-                0x04007fbc                camera_lp_target
-                0x04007fc4                adc_lp_target
-                0x04007fcc                dac_lp_target
-                0x04007fd4                alnk_lp_target
-                0x04007fdc                pwm_lp_target
-                0x04007fe4                pap_lp_target
-                0x04007fec                imd_lp_target
-                0x04007ff4                emi_lp_target
-                0x04007ffc                norflash_lp_target
-                0x04008004                usb_dev_lp_target
-                0x0400800c                dma_lp_target
-                0x04008014                audio_cmd_lp_target
-                0x0400801c                btstack_lowpower_target
-                0x04008024                plnk_lp_target
-                0x0400802c                lp_target_end = .
+ .lp_target     0x04007f78       0xb8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04007f78                iic_lp_target
+                0x04007f80                adc_scan_lp_target
+                0x04007f88                key_lp_target
+                0x04007f90                ota_lp_target
+                0x04007f98                usr_systimer_lp_target
+                0x04007fa0                vm_lp_target
+                0x04007fa8                uart_lp_target
+                0x04007fb0                spi_lp_target
+                0x04007fb8                sys_power_lp_target
+                0x04007fc0                camera_lp_target
+                0x04007fc8                adc_lp_target
+                0x04007fd0                dac_lp_target
+                0x04007fd8                alnk_lp_target
+                0x04007fe0                pwm_lp_target
+                0x04007fe8                pap_lp_target
+                0x04007ff0                imd_lp_target
+                0x04007ff8                emi_lp_target
+                0x04008000                norflash_lp_target
+                0x04008008                usb_dev_lp_target
+                0x04008010                dma_lp_target
+                0x04008018                audio_cmd_lp_target
+                0x04008020                btstack_lowpower_target
+                0x04008028                plnk_lp_target
+                0x04008030                lp_target_end = .
                 [!provide]                PROVIDE (lp_target_end, .)
-                0x0400802c                _ai_sdk_api_begin = .
+                0x04008030                _ai_sdk_api_begin = .
                 [!provide]                PROVIDE (ai_sdk_api_begin, .)
  *(.ai_sdk)
-                0x0400802c                _ai_sdk_api_end = .
+                0x04008030                _ai_sdk_api_end = .
                 [!provide]                PROVIDE (ai_sdk_api_end, .)
-                0x0400802c                config_target_begin = .
+                0x04008030                config_target_begin = .
                 [!provide]                PROVIDE (config_target_begin, .)
  *(.config_target)
-                0x0400802c                config_target_end = .
+                0x04008030                config_target_end = .
                 [!provide]                PROVIDE (config_target_end, .)
-                0x0400802c                _tool_interface_begin = .
+                0x04008030                _tool_interface_begin = .
                 [!provide]                PROVIDE (tool_interface_begin, .)
  *(.tool_interface)
-                0x0400802c                _tool_interface_end = .
+                0x04008030                _tool_interface_end = .
                 [!provide]                PROVIDE (tool_interface_end, .)
-                0x0400802c                _lcd_device_begin = .
-                0x0400802c                PROVIDE (lcd_device_begin, .)
+                0x04008030                _lcd_device_begin = .
+                0x04008030                PROVIDE (lcd_device_begin, .)
  *(.lcd)
- .lcd           0x0400802c       0x38 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008064                _lcd_device_end = .
-                0x04008064                PROVIDE (lcd_device_end, .)
-                0x04008064                _camera_dev_begin = .
-                0x04008064                PROVIDE (camera_dev_begin, .)
+ .lcd           0x04008030       0x38 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008068                _lcd_device_end = .
+                0x04008068                PROVIDE (lcd_device_end, .)
+                0x04008068                _camera_dev_begin = .
+                0x04008068                PROVIDE (camera_dev_begin, .)
  *(.camera_dev)
- .camera_dev    0x04008064      0x6c0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008724                _camera_dev_end = .
-                0x04008724                PROVIDE (camera_dev_end, .)
-                0x04008724                _camera1_dev_begin = .
-                0x04008724                PROVIDE (camera1_dev_begin, .)
+ .camera_dev    0x04008068      0x6c0 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008728                _camera_dev_end = .
+                0x04008728                PROVIDE (camera_dev_end, .)
+                0x04008728                _camera1_dev_begin = .
+                0x04008728                PROVIDE (camera1_dev_begin, .)
  *(.camera1_dev)
- .camera1_dev   0x04008724      0x144 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008868                _camera1_dev_end = .
-                0x04008868                PROVIDE (camera1_dev_end, .)
-                0x04008868                _iic_device_begin = .
-                0x04008868                PROVIDE (iic_device_begin, .)
+ .camera1_dev   0x04008728      0x144 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400886c                _camera1_dev_end = .
+                0x0400886c                PROVIDE (camera1_dev_end, .)
+                0x0400886c                _iic_device_begin = .
+                0x0400886c                PROVIDE (iic_device_begin, .)
  *(.iic)
- .iic           0x04008868       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008898                _iic_device_end = .
-                0x04008898                PROVIDE (iic_device_end, .)
-                0x04008898                _video_pkg_sys_begin = .
-                0x04008898                PROVIDE (video_pkg_sys_begin, .)
+ .iic           0x0400886c       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400889c                _iic_device_end = .
+                0x0400889c                PROVIDE (iic_device_end, .)
+                0x0400889c                _video_pkg_sys_begin = .
+                0x0400889c                PROVIDE (video_pkg_sys_begin, .)
  *(.video_pkg_sys)
  .video_pkg_sys
-                0x04008898       0x48 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008898                net_sys_ops
-                0x040088bc                vpkg_fsys_ops
-                0x040088e0                _video_pkg_sys_end = .
-                0x040088e0                PROVIDE (video_pkg_sys_end, .)
-                0x040088e0                _video_pkg_begin = .
-                0x040088e0                PROVIDE (video_pkg_begin, .)
+                0x0400889c       0x48 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400889c                net_sys_ops
+                0x040088c0                vpkg_fsys_ops
+                0x040088e4                _video_pkg_sys_end = .
+                0x040088e4                PROVIDE (video_pkg_sys_end, .)
+                0x040088e4                _video_pkg_begin = .
+                0x040088e4                PROVIDE (video_pkg_begin, .)
  *(.video_pkg)
- .video_pkg     0x040088e0       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x040088e0                avi_pkg_ops
-                0x04008900                _video_pkg_end = .
-                0x04008900                PROVIDE (video_pkg_end, .)
-                0x04008900                . = ALIGN (0x4)
-                0x04008900                _app_begin = .
-                0x04008900                PROVIDE (app_begin, .)
+ .video_pkg     0x040088e4       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x040088e4                avi_pkg_ops
+                0x04008904                _video_pkg_end = .
+                0x04008904                PROVIDE (video_pkg_end, .)
+                0x04008904                . = ALIGN (0x4)
+                0x04008904                _app_begin = .
+                0x04008904                PROVIDE (app_begin, .)
  *(.app)
- .app           0x04008900       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008920                _app_end = .
-                0x04008920                PROVIDE (app_end, .)
-                0x04008920                _static_hi_timer_begin = .
+ .app           0x04008904       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008924                _app_end = .
+                0x04008924                PROVIDE (app_end, .)
+                0x04008924                _static_hi_timer_begin = .
                 [!provide]                PROVIDE (static_hi_timer_begin, .)
  *(.hi_timer)
-                0x04008920                _static_hi_timer_end = .
+                0x04008924                _static_hi_timer_end = .
                 [!provide]                PROVIDE (static_hi_timer_end, .)
-                0x04008920                _sys_cpu_timer_begin = .
-                0x04008920                PROVIDE (sys_cpu_timer_begin, .)
+                0x04008924                _sys_cpu_timer_begin = .
+                0x04008924                PROVIDE (sys_cpu_timer_begin, .)
  *(.sys_cpu_timer)
  .sys_cpu_timer
-                0x04008920       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008920                cpu_timer4
-                0x04008930                _sys_cpu_timer_end = .
-                0x04008930                PROVIDE (sys_cpu_timer_end, .)
-                0x04008930                _gsensor_dev_begin = .
+                0x04008924       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008924                cpu_timer4
+                0x04008934                _sys_cpu_timer_end = .
+                0x04008934                PROVIDE (sys_cpu_timer_end, .)
+                0x04008934                _gsensor_dev_begin = .
                 [!provide]                PROVIDE (gsensor_dev_begin, .)
  *(.gsensor_dev)
-                0x04008930                _gsensor_dev_end = .
+                0x04008934                _gsensor_dev_end = .
                 [!provide]                PROVIDE (gsensor_dev_end, .)
-                0x04008930                _clock_critical_handler_begin = .
-                0x04008930                PROVIDE (clock_critical_handler_begin, .)
+                0x04008934                _clock_critical_handler_begin = .
+                0x04008934                PROVIDE (clock_critical_handler_begin, .)
  *(.clock_critical_txt)
  .clock_critical_txt
-                0x04008930       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008930                clock_port
-                0x04008938                clock_timer1
-                0x04008940                _clock_critical_handler_end = .
-                0x04008940                PROVIDE (clock_critical_handler_end, .)
-                0x04008940                . = ALIGN (0x4)
-                0x04008940                _audio_decoder_begin = .
-                0x04008940                PROVIDE (audio_decoder_begin, .)
+                0x04008934       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008934                clock_port
+                0x0400893c                clock_timer1
+                0x04008944                _clock_critical_handler_end = .
+                0x04008944                PROVIDE (clock_critical_handler_end, .)
+                0x04008944                . = ALIGN (0x4)
+                0x04008944                _audio_decoder_begin = .
+                0x04008944                PROVIDE (audio_decoder_begin, .)
  *(.audio_decoder)
  .audio_decoder
-                0x04008940      0x348 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008940                pcm_decoder_ops
-                0x04008978                mp3_decoder
-                0x040089b0                m4a_decoder
-                0x040089e8                wav_decoder
-                0x04008a20                adpcm_decoder_ops
-                0x04008a58                amr_decoder
-                0x04008a90                ape_decoder
-                0x04008ac8                flac_decoder
-                0x04008b00                opus_decoder
-                0x04008b38                ogg_vorbis_decoder
-                0x04008b70                cvsd_decoder
-                0x04008ba8                sbc_decoder
-                0x04008be0                msbc_decoder
-                0x04008c18                speex_decoder
-                0x04008c50                dts_decoder
-                0x04008c88                _audio_decoder_end = .
-                0x04008c88                PROVIDE (audio_decoder_end, .)
-                0x04008c88                _audio_package_begin = .
-                0x04008c88                PROVIDE (audio_package_begin, .)
+                0x04008944      0x348 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008944                pcm_decoder_ops
+                0x0400897c                mp3_decoder
+                0x040089b4                m4a_decoder
+                0x040089ec                wav_decoder
+                0x04008a24                adpcm_decoder_ops
+                0x04008a5c                amr_decoder
+                0x04008a94                ape_decoder
+                0x04008acc                flac_decoder
+                0x04008b04                opus_decoder
+                0x04008b3c                ogg_vorbis_decoder
+                0x04008b74                cvsd_decoder
+                0x04008bac                sbc_decoder
+                0x04008be4                msbc_decoder
+                0x04008c1c                speex_decoder
+                0x04008c54                dts_decoder
+                0x04008c8c                _audio_decoder_end = .
+                0x04008c8c                PROVIDE (audio_decoder_end, .)
+                0x04008c8c                _audio_package_begin = .
+                0x04008c8c                PROVIDE (audio_package_begin, .)
  *(.audio_package)
  .audio_package
-                0x04008c88      0x108 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008c88                mp3_package_ops
-                0x04008ca0                adpcm_package_ops
-                0x04008cb8                pcm_package_ops
-                0x04008cd0                wav_package_ops
-                0x04008ce8                spx_package_ops
-                0x04008d00                amr_package_ops
-                0x04008d18                ogg_package_ops
-                0x04008d30                opus_package_ops
-                0x04008d48                cvsd_package_ops
-                0x04008d60                msbc_package_ops
-                0x04008d78                sbc_package_ops
-                0x04008d90                _audio_package_end = .
-                0x04008d90                PROVIDE (audio_package_end, .)
-                0x04008d90                _audio_effect_begin = .
-                0x04008d90                PROVIDE (audio_effect_begin, .)
+                0x04008c8c      0x108 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008c8c                mp3_package_ops
+                0x04008ca4                adpcm_package_ops
+                0x04008cbc                pcm_package_ops
+                0x04008cd4                wav_package_ops
+                0x04008cec                spx_package_ops
+                0x04008d04                amr_package_ops
+                0x04008d1c                ogg_package_ops
+                0x04008d34                opus_package_ops
+                0x04008d4c                cvsd_package_ops
+                0x04008d64                msbc_package_ops
+                0x04008d7c                sbc_package_ops
+                0x04008d94                _audio_package_end = .
+                0x04008d94                PROVIDE (audio_package_end, .)
+                0x04008d94                _audio_effect_begin = .
+                0x04008d94                PROVIDE (audio_effect_begin, .)
  *(.audio_effect)
- .audio_effect  0x04008d90       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008d90                virtual_bass_effect
-                0x04008da0                _audio_effect_end = .
-                0x04008da0                PROVIDE (audio_effect_end, .)
-                0x04008da0                _audio_hwaccel_begin = .
-                0x04008da0                PROVIDE (audio_hwaccel_begin, .)
+ .audio_effect  0x04008d94       0x10 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008d94                virtual_bass_effect
+                0x04008da4                _audio_effect_end = .
+                0x04008da4                PROVIDE (audio_effect_end, .)
+                0x04008da4                _audio_hwaccel_begin = .
+                0x04008da4                PROVIDE (audio_hwaccel_begin, .)
  *(.audio_hwaccel)
  .audio_hwaccel
-                0x04008da0       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008dc0                _audio_hwaccel_end = .
-                0x04008dc0                PROVIDE (audio_hwaccel_end, .)
-                0x04008dc0                _audio_output_handler_begin = .
-                0x04008dc0                PROVIDE (audio_output_handler_begin, .)
+                0x04008da4       0x20 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008dc4                _audio_hwaccel_end = .
+                0x04008dc4                PROVIDE (audio_hwaccel_end, .)
+                0x04008dc4                _audio_output_handler_begin = .
+                0x04008dc4                PROVIDE (audio_output_handler_begin, .)
  *(.audio_output_handler)
-                0x04008dc0                _audio_output_handler_end = .
-                0x04008dc0                PROVIDE (audio_output_handler_end, .)
-                0x04008dc0                _audio_input_handler_begin = .
-                0x04008dc0                PROVIDE (audio_input_handler_begin, .)
+                0x04008dc4                _audio_output_handler_end = .
+                0x04008dc4                PROVIDE (audio_output_handler_end, .)
+                0x04008dc4                _audio_input_handler_begin = .
+                0x04008dc4                PROVIDE (audio_input_handler_begin, .)
  *(.audio_input_handler)
-                0x04008dc0                _audio_input_handler_end = .
-                0x04008dc0                PROVIDE (audio_input_handler_end, .)
-                0x04008dc0                _audio_subdev_begin = .
-                0x04008dc0                PROVIDE (audio_subdev_begin, .)
+                0x04008dc4                _audio_input_handler_end = .
+                0x04008dc4                PROVIDE (audio_input_handler_end, .)
+                0x04008dc4                _audio_subdev_begin = .
+                0x04008dc4                PROVIDE (audio_subdev_begin, .)
  *(.audio_subdev.0)
  .audio_subdev.0
-                0x04008dc0       0xa8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008dc0                subdev_pcm_enc
-                0x04008dcc                subdev_mp3_enc
-                0x04008dd8                subdev_adpcm_enc
-                0x04008de4                subdev_speex_enc
-                0x04008df0                subdev_amr_enc
-                0x04008dfc                subdev_ogg_enc
-                0x04008e08                subdev_opus_enc
-                0x04008e14                subdev_vad_enc
-                0x04008e20                subdev_jlvad_enc
-                0x04008e2c                subdev_cvsd_enc
-                0x04008e38                subdev_msbc_enc
-                0x04008e44                subdev_sbc_enc
-                0x04008e50                subdev_dac
-                0x04008e5c                subdev_iis_dec
+                0x04008dc4       0xa8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008dc4                subdev_pcm_enc
+                0x04008dd0                subdev_mp3_enc
+                0x04008ddc                subdev_adpcm_enc
+                0x04008de8                subdev_speex_enc
+                0x04008df4                subdev_amr_enc
+                0x04008e00                subdev_ogg_enc
+                0x04008e0c                subdev_opus_enc
+                0x04008e18                subdev_vad_enc
+                0x04008e24                subdev_jlvad_enc
+                0x04008e30                subdev_cvsd_enc
+                0x04008e3c                subdev_msbc_enc
+                0x04008e48                subdev_sbc_enc
+                0x04008e54                subdev_dac
+                0x04008e60                subdev_iis_dec
  *(.audio_subdev.1)
  .audio_subdev.1
-                0x04008e68       0x24 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008e68                subdev_aec_enc
-                0x04008e74                subdev_dns_enc
-                0x04008e80                subdev_dns_dual_enc
+                0x04008e6c       0x24 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008e6c                subdev_aec_enc
+                0x04008e78                subdev_dns_enc
+                0x04008e84                subdev_dns_dual_enc
  *(.audio_subdev.2)
  .audio_subdev.2
-                0x04008e8c        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008e8c                vir_dev_sub
+                0x04008e90        0xc ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008e90                vir_dev_sub
  *(.audio_subdev.3)
  .audio_subdev.3
-                0x04008e98       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008e98                subdev_adc
-                0x04008ea4                subdev_iis_enc
-                0x04008eb0                subdev_plnk
-                0x04008ebc                subdev_spdif
-                0x04008ec8                _audio_subdev_end = .
-                0x04008ec8                PROVIDE (audio_subdev_end, .)
-                0x04008ec8                _fm_dev_begin = .
+                0x04008e9c       0x30 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008e9c                subdev_adc
+                0x04008ea8                subdev_iis_enc
+                0x04008eb4                subdev_plnk
+                0x04008ec0                subdev_spdif
+                0x04008ecc                _audio_subdev_end = .
+                0x04008ecc                PROVIDE (audio_subdev_end, .)
+                0x04008ecc                _fm_dev_begin = .
                 [!provide]                PROVIDE (fm_dev_begin, .)
  *(.fm_dev)
-                0x04008ec8                _fm_dev_end = .
+                0x04008ecc                _fm_dev_end = .
                 [!provide]                PROVIDE (fm_dev_end, .)
-                0x04008ec8                _video_dev_begin = .
-                0x04008ec8                PROVIDE (video_dev_begin, .)
+                0x04008ecc                _video_dev_begin = .
+                0x04008ecc                PROVIDE (video_dev_begin, .)
  *(.video_device)
- .video_device  0x04008ec8      0x118 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008fe0                _video_dev_end = .
-                0x04008fe0                PROVIDE (video_dev_end, .)
-                0x04008fe0                _video_subdev_begin = .
-                0x04008fe0                PROVIDE (video_subdev_begin, .)
+ .video_device  0x04008ecc      0x118 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008fe4                _video_dev_end = .
+                0x04008fe4                PROVIDE (video_dev_end, .)
+                0x04008fe4                _video_subdev_begin = .
+                0x04008fe4                PROVIDE (video_subdev_begin, .)
  *(.video_subdev.0)
  .video_subdev.0
-                0x04008fe0       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04008fe0                camera_subdev
-                0x04008ff4                djpeg_subdev
+                0x04008fe4       0x28 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04008fe4                camera_subdev
+                0x04008ff8                djpeg_subdev
  *(.video_subdev.1)
  *(.video_subdev.2)
  *(.video_subdev.3)
  .video_subdev.3
-                0x04009008       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04009008                mjpg_spec_stream_subdev
+                0x0400900c       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400900c                mjpg_spec_stream_subdev
  *(.video_subdev.4)
  .video_subdev.4
-                0x0400901c       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x0400901c                uvc_subdev
+                0x04009020       0x14 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x04009020                uvc_subdev
  *(.video_subdev.5)
-                0x04009030                _video_subdev_end = .
-                0x04009030                PROVIDE (video_subdev_end, .)
-                0x04009030                . = ALIGN (0x4)
-                0x04009030                _ctp_mapping_tab_begin = .
+                0x04009034                _video_subdev_end = .
+                0x04009034                PROVIDE (video_subdev_end, .)
+                0x04009034                . = ALIGN (0x4)
+                0x04009034                _ctp_mapping_tab_begin = .
                 [!provide]                PROVIDE (ctp_mapping_tab_begin, .)
-                0x04009030                _ctp_mapping_tab_system_cmd_begin = .
+                0x04009034                _ctp_mapping_tab_system_cmd_begin = .
                 [!provide]                PROVIDE (ctp_mapping_tab_system_cmd_begin, .)
  *(.ctp_system_cmd)
-                0x04009030                _ctp_mapping_tab_system_cmd_end = .
+                0x04009034                _ctp_mapping_tab_system_cmd_end = .
                 [!provide]                PROVIDE (ctp_mapping_tab_system_cmd_end, .)
-                0x04009030                _ctp_mapping_tab_video_cmd_begin = .
+                0x04009034                _ctp_mapping_tab_video_cmd_begin = .
                 [!provide]                PROVIDE (ctp_mapping_tab_video_cmd_begin, .)
  *(.ctp_video_cmd)
-                0x04009030                _ctp_mapping_tab_video_cmd_end = .
+                0x04009034                _ctp_mapping_tab_video_cmd_end = .
                 [!provide]                PROVIDE (ctp_mapping_tab_video_cmd_end, .)
-                0x04009030                _ctp_mapping_tab_photo_cmd_begin = .
+                0x04009034                _ctp_mapping_tab_photo_cmd_begin = .
                 [!provide]                PROVIDE (ctp_mapping_tab_photo_cmd_begin, .)
  *(.ctp_photo_cmd)
-                0x04009030                _ctp_mapping_tab_photo_cmd_end = .
+                0x04009034                _ctp_mapping_tab_photo_cmd_end = .
                 [!provide]                PROVIDE (ctp_mapping_tab_photo_cmd_end, .)
-                0x04009030                _ctp_mapping_tab_end = .
+                0x04009034                _ctp_mapping_tab_end = .
                 [!provide]                PROVIDE (ctp_mapping_tab_end, .)
-                0x04009030                _net_video_stream_sub_begin = .
-                0x04009030                PROVIDE (net_video_stream_sub_begin, .)
+                0x04009034                _net_video_stream_sub_begin = .
+                0x04009034                PROVIDE (net_video_stream_sub_begin, .)
  *(.net_video_stream)
  .net_video_stream
-                0x04009030       0x18 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
-                0x04009048                _net_video_stream_sub_end = .
-                0x04009048                PROVIDE (net_video_stream_sub_end, .)
-                0x04009048                . = ALIGN (0x4)
-                0x04009048                btstack_data_start = .
+                0x04009034       0x18 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400904c                _net_video_stream_sub_end = .
+                0x0400904c                PROVIDE (net_video_stream_sub_end, .)
+                0x0400904c                . = ALIGN (0x4)
+                0x0400904c                btstack_data_start = .
  *(.bt_stack_data)
  .bt_stack_data
-                0x04009048       0xec ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+                0x0400904c       0xec ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  *(.ble_db_data)
  *(.ble_sm_data)
  *(.ble_att_data)
  *(.ble_gatt_data)
-                0x04009134                BTSTACK_LE_HOST_MESH_DATA_START = .
-                0x04009134                . = ((. + 0x3) & 0xfffffffc)
-                0x04009134                _net_buf_pool_list = .
+                0x04009138                BTSTACK_LE_HOST_MESH_DATA_START = .
+                0x04009138                . = ((. + 0x3) & 0xfffffffc)
+                0x04009138                _net_buf_pool_list = .
  *(._net_buf_pool.static.*)
  *(.ble_mesh_data)
  *(.ble_mesh_tinycrypt_data)
                 0x00000000                BTSTACK_LE_HOST_MESH_DATA_SIZE = ABSOLUTE ((. - BTSTACK_LE_HOST_MESH_DATA_START))
-                0x04009134                btstack_data_end = .
-                0x04009134                . = ALIGN (0x4)
+                0x04009138                btstack_data_end = .
+                0x04009138                . = ALIGN (0x4)
  *(.data)
- *fill*         0x04009134        0xc 
+ *fill*         0x04009138        0x8 
  .data          0x04009140     0x1304 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
  .data          0x0400a444        0x4 ../../../../include_lib/newlib/pi32v2-lib/libc.a(lib_a-ctype_.o)
                 0x0400a444                __ctype_ptr__
@@ -5087,26 +5085,26 @@ LOAD ../../../../cpu/wl82/liba/ui_draw.a
 .cache_ram_bss  0x01f28000        0x0
                 0x01f28000                . = ALIGN (0x4)
                 0x02000120                text_begin = ADDR (.text)
-                0x0014b2a0                text_size = SIZEOF (.text)
+                0x0014b2c0                text_size = SIZEOF (.text)
                 [!provide]                PROVIDE (text_size, SIZEOF (.text))
                 0x0400a880                bss_begin = ADDR (.bss)
                 0x00009178                bss_size = SIZEOF (.bss)
                 [!provide]                PROVIDE (bss_size, SIZEOF (.bss))
                 0x04000120                data_vma = ADDR (.data)
-                0x0214b3c0                data_lma = (text_begin + SIZEOF (.text))
+                0x0214b3e0                data_lma = (text_begin + SIZEOF (.text))
                 0x0000a750                data_size = SIZEOF (.data)
                 [!provide]                PROVIDE (data_size, SIZEOF (.data))
                 0x01c043d0                _ram0_bss_vma = ADDR (.ram0_bss)
                 0x000150b0                _ram0_bss_size = SIZEOF (.ram0_bss)
                 0x000150b0                PROVIDE (ram0_bss_size, SIZEOF (.ram0_bss))
                 0x01c00000                _ram0_data_vma = ADDR (.ram0_data)
-                0x02155b10                _ram0_data_lma = ((text_begin + SIZEOF (.text)) + SIZEOF (.data))
+                0x02155b30                _ram0_data_lma = ((text_begin + SIZEOF (.text)) + SIZEOF (.data))
                 0x000043d0                _ram0_data_size = SIZEOF (.ram0_data)
                 0x000043d0                PROVIDE (ram0_data_size, SIZEOF (.ram0_data))
                 0x01f28000                PROVIDE (cache_ram_bss_vma, ADDR (.cache_ram_bss))
                 0x00000000                PROVIDE (cache_ram_bss_size, SIZEOF (.cache_ram_bss))
                 0x01f28000                PROVIDE (cache_ram_data_vma, ADDR (.cache_ram_data))
-                0x02159ee0                PROVIDE (cache_ram_data_lma, (((text_begin + SIZEOF (.text)) + SIZEOF (.data)) + SIZEOF (.ram0_data)))
+                0x02159f00                PROVIDE (cache_ram_data_lma, (((text_begin + SIZEOF (.text)) + SIZEOF (.data)) + SIZEOF (.ram0_data)))
                 0x00000000                PROVIDE (cache_ram_data_size, SIZEOF (.cache_ram_data))
                 0x00000000                BTCTLER_LE_RAM_TOTAL = (BTCTLER_LE_CONTROLLER_DATA_SIZE + BTCTLER_LE_CONTROLLER_BSS_SIZE)
                 0x00000000                BTCTLER_LE_CODE_TOTAL = BTCTLER_LE_CONTROLLER_CODE_SIZE
@@ -5129,10 +5127,10 @@ OUTPUT(..\..\..\..\cpu\wl82\tools\sdk.elf elf32-pi32v2)
  .debug_str     0x0008530d       0xbd ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
                                 0x446 (size before relaxing)
 
-.debug_loc      0x00000000    0x90400
- .debug_loc     0x00000000    0x8ff9a ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .debug_loc     0x0008ff9a      0x116 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
- .debug_loc     0x000900b0      0x350 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+.debug_loc      0x00000000    0x903cc
+ .debug_loc     0x00000000    0x8ff66 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .debug_loc     0x0008ff66      0x116 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+ .debug_loc     0x0009007c      0x350 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
 
 .debug_abbrev   0x00000000     0x157f
  .debug_abbrev  0x00000000     0x119b ..\..\..\..\cpu\wl82\tools\sdk.elf.o
@@ -5144,20 +5142,20 @@ OUTPUT(..\..\..\..\cpu\wl82\tools\sdk.elf elf32-pi32v2)
  .debug_abbrev  0x00001263      0x17e ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
  .debug_abbrev  0x000013e1      0x19e ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
 
-.debug_info     0x00000000   0x25ab3b
- .debug_info    0x00000000   0x2596d7 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .debug_info    0x002596d7       0xfd ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
- .debug_info    0x002597d4       0xee ../../../../cpu/wl82/liba/system.a(movable.S.o)
- .debug_info    0x002598c2      0x1ce ../../../../cpu/wl82/liba/cpu.a(startup.S.o)
- .debug_info    0x00259a90      0x19a ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
- .debug_info    0x00259c2a      0x299 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
- .debug_info    0x00259ec3      0x630 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
- .debug_info    0x0025a4f3      0x648 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+.debug_info     0x00000000   0x25ab3a
+ .debug_info    0x00000000   0x2596d6 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .debug_info    0x002596d6       0xfd ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
+ .debug_info    0x002597d3       0xee ../../../../cpu/wl82/liba/system.a(movable.S.o)
+ .debug_info    0x002598c1      0x1ce ../../../../cpu/wl82/liba/cpu.a(startup.S.o)
+ .debug_info    0x00259a8f      0x19a ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
+ .debug_info    0x00259c29      0x299 ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
+ .debug_info    0x00259ec2      0x630 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+ .debug_info    0x0025a4f2      0x648 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
 
-.debug_ranges   0x00000000     0xdad0
- .debug_ranges  0x00000000     0xdab8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .debug_ranges  0x0000dab8       0x18 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
- .debug_ranges  0x0000dad0        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+.debug_ranges   0x00000000     0xdaf0
+ .debug_ranges  0x00000000     0xdad8 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .debug_ranges  0x0000dad8       0x18 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+ .debug_ranges  0x0000daf0        0x0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
 
 .debug_macinfo  0x00000000        0x3
  .debug_macinfo
@@ -5190,78 +5188,78 @@ OUTPUT(..\..\..\..\cpu\wl82\tools\sdk.elf elf32-pi32v2)
  .debug_frame   0x0001eca4       0xa0 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
  .debug_frame   0x0001ed44       0x64 ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
 
-.debug_line     0x00000000    0xf6248
- .debug_line    0x00000000    0xf4c86 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
- .debug_line    0x000f4c86       0x2c obj/Release/include_lib/btctrler/version.z.o
- .debug_line    0x000f4cb2       0x2c obj/Release/include_lib/btstack/version.z.o
- .debug_line    0x000f4cde       0x2c obj/Release/include_lib/driver/version.z.o
- .debug_line    0x000f4d0a       0x2c obj/Release/include_lib/media/version.z.o
- .debug_line    0x000f4d36       0x2c obj/Release/include_lib/net/version.z.o
- .debug_line    0x000f4d62       0x2c obj/Release/include_lib/server/version.z.o
- .debug_line    0x000f4d8e       0x2c obj/Release/include_lib/system/version.z.o
- .debug_line    0x000f4dba       0x2c obj/Release/include_lib/update/version.z.o
- .debug_line    0x000f4de6       0x2c obj/Release/include_lib/utils/version.z.o
- .debug_line    0x000f4e12       0x2c obj/Release/lib/net/version.z.o
- .debug_line    0x000f4e3e       0x2c obj/Release/lib/server/version.z.o
- .debug_line    0x000f4e6a       0x2c obj/Release/lib/utils/version.z.o
- .debug_line    0x000f4e96       0x2c ../../../../cpu/wl82/liba/event.a(version.z.o)
- .debug_line    0x000f4ec2       0xca ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
- .debug_line    0x000f4f8c       0xb7 ../../../../cpu/wl82/liba/system.a(movable.S.o)
- .debug_line    0x000f5043       0x2c ../../../../cpu/wl82/liba/system.a(version.z.o)
- .debug_line    0x000f506f       0x2c ../../../../cpu/wl82/liba/fs.a(version.z.o)
- .debug_line    0x000f509b       0x2c ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
- .debug_line    0x000f50c7       0xc7 ../../../../cpu/wl82/liba/cpu.a(startup.S.o)
- .debug_line    0x000f518e       0x2c ../../../../cpu/wl82/liba/cpu.a(version.z.o)
- .debug_line    0x000f51ba       0x2c ../../../../cpu/wl82/liba/update.a(version.z.o)
- .debug_line    0x000f51e6       0x2c ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
- .debug_line    0x000f5212       0x2c ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
- .debug_line    0x000f523e       0x2c ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
- .debug_line    0x000f526a       0x2c ../../../../cpu/wl82/liba/libvad.a(version.z.o)
- .debug_line    0x000f5296      0x170 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
- .debug_line    0x000f5406       0xfa ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
- .debug_line    0x000f5500      0x18e ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
- .debug_line    0x000f568e      0x4ae ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
- .debug_line    0x000f5b3c       0x2c ../../../../cpu/wl82/liba/net_server.a(version.z.o)
- .debug_line    0x000f5b68       0x2c ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
- .debug_line    0x000f5b94       0x2c ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
- .debug_line    0x000f5bc0       0x2c ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
- .debug_line    0x000f5bec       0x2c ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
- .debug_line    0x000f5c18       0x2c ../../../../cpu/wl82/liba/profile.a(version.z.o)
- .debug_line    0x000f5c44       0x2c ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
- .debug_line    0x000f5c70       0x2c ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
- .debug_line    0x000f5c9c       0x2c ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
- .debug_line    0x000f5cc8       0x2c ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
- .debug_line    0x000f5cf4       0x2c ../../../../cpu/wl82/liba/hsm.a(version.z.o)
- .debug_line    0x000f5d20       0x2c ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
- .debug_line    0x000f5d4c       0x2c ../../../../cpu/wl82/liba/http_server.a(version.z.o)
- .debug_line    0x000f5d78       0x2c ../../../../cpu/wl82/liba/json.a(version.z.o)
- .debug_line    0x000f5da4       0x2c ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
- .debug_line    0x000f5dd0       0x2c ../../../../cpu/wl82/liba/network_download.a(version.z.o)
- .debug_line    0x000f5dfc       0x2c ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
- .debug_line    0x000f5e28       0x2c ../../../../cpu/wl82/liba/libturing.a(version.z.o)
- .debug_line    0x000f5e54       0x2c ../../../../cpu/wl82/liba/libdui.a(version.z.o)
- .debug_line    0x000f5e80       0x2c ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
- .debug_line    0x000f5eac       0x2c ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
- .debug_line    0x000f5ed8       0x2c ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
- .debug_line    0x000f5f04       0x2c ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
- .debug_line    0x000f5f30       0x2c ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
- .debug_line    0x000f5f5c       0x2c ../../../../cpu/wl82/liba/libwt.a(version.z.o)
- .debug_line    0x000f5f88       0x2c ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
- .debug_line    0x000f5fb4       0x2c ../../../../cpu/wl82/liba/websocket.a(version.z.o)
- .debug_line    0x000f5fe0       0x2c ../../../../cpu/wl82/liba/iperf.a(version.z.o)
- .debug_line    0x000f600c       0x2c ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
- .debug_line    0x000f6038       0x2c ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
- .debug_line    0x000f6064       0x2c ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
- .debug_line    0x000f6090       0x2c ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
- .debug_line    0x000f60bc       0x2c ../../../../cpu/wl82/liba/btstack.a(version.z.o)
- .debug_line    0x000f60e8       0x2c ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
- .debug_line    0x000f6114       0x2c ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
- .debug_line    0x000f6140       0x2c ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
- .debug_line    0x000f616c       0x2c ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
- .debug_line    0x000f6198       0x2c ../../../../cpu/wl82/liba/ui.a(version.z.o)
- .debug_line    0x000f61c4       0x2c ../../../../cpu/wl82/liba/res.a(version.z.o)
- .debug_line    0x000f61f0       0x2c ../../../../cpu/wl82/liba/font.a(version.z.o)
- .debug_line    0x000f621c       0x2c ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
+.debug_line     0x00000000    0xf6252
+ .debug_line    0x00000000    0xf4c90 ..\..\..\..\cpu\wl82\tools\sdk.elf.o
+ .debug_line    0x000f4c90       0x2c obj/Release/include_lib/btctrler/version.z.o
+ .debug_line    0x000f4cbc       0x2c obj/Release/include_lib/btstack/version.z.o
+ .debug_line    0x000f4ce8       0x2c obj/Release/include_lib/driver/version.z.o
+ .debug_line    0x000f4d14       0x2c obj/Release/include_lib/media/version.z.o
+ .debug_line    0x000f4d40       0x2c obj/Release/include_lib/net/version.z.o
+ .debug_line    0x000f4d6c       0x2c obj/Release/include_lib/server/version.z.o
+ .debug_line    0x000f4d98       0x2c obj/Release/include_lib/system/version.z.o
+ .debug_line    0x000f4dc4       0x2c obj/Release/include_lib/update/version.z.o
+ .debug_line    0x000f4df0       0x2c obj/Release/include_lib/utils/version.z.o
+ .debug_line    0x000f4e1c       0x2c obj/Release/lib/net/version.z.o
+ .debug_line    0x000f4e48       0x2c obj/Release/lib/server/version.z.o
+ .debug_line    0x000f4e74       0x2c obj/Release/lib/utils/version.z.o
+ .debug_line    0x000f4ea0       0x2c ../../../../cpu/wl82/liba/event.a(version.z.o)
+ .debug_line    0x000f4ecc       0xca ../../../../cpu/wl82/liba/system.a(port_asm.S.o)
+ .debug_line    0x000f4f96       0xb7 ../../../../cpu/wl82/liba/system.a(movable.S.o)
+ .debug_line    0x000f504d       0x2c ../../../../cpu/wl82/liba/system.a(version.z.o)
+ .debug_line    0x000f5079       0x2c ../../../../cpu/wl82/liba/fs.a(version.z.o)
+ .debug_line    0x000f50a5       0x2c ../../../../cpu/wl82/liba/cfg_tool.a(version.z.o)
+ .debug_line    0x000f50d1       0xc7 ../../../../cpu/wl82/liba/cpu.a(startup.S.o)
+ .debug_line    0x000f5198       0x2c ../../../../cpu/wl82/liba/cpu.a(version.z.o)
+ .debug_line    0x000f51c4       0x2c ../../../../cpu/wl82/liba/update.a(version.z.o)
+ .debug_line    0x000f51f0       0x2c ../../../../cpu/wl82/liba/common_lib.a(version.z.o)
+ .debug_line    0x000f521c       0x2c ../../../../cpu/wl82/liba/wl_rf_common.a(version.z.o)
+ .debug_line    0x000f5248       0x2c ../../../../cpu/wl82/liba/audio_server.a(version.z.o)
+ .debug_line    0x000f5274       0x2c ../../../../cpu/wl82/liba/libvad.a(version.z.o)
+ .debug_line    0x000f52a0      0x170 ../../../../cpu/wl82/liba/lib_ape_dec.a(ape_dec_asm.o)
+ .debug_line    0x000f5410       0xfa ../../../../cpu/wl82/liba/lib_dts_dec.a(dts_dec.o)
+ .debug_line    0x000f550a      0x18e ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm_main.o)
+ .debug_line    0x000f5698      0x4ae ../../../../cpu/wl82/liba/lib_adpcm_enc.a(en_adpcm.o)
+ .debug_line    0x000f5b46       0x2c ../../../../cpu/wl82/liba/net_server.a(version.z.o)
+ .debug_line    0x000f5b72       0x2c ../../../../cpu/wl82/liba/video_rec_server.a(version.z.o)
+ .debug_line    0x000f5b9e       0x2c ../../../../cpu/wl82/liba/lwip_2_1_3.a(version.z.o)
+ .debug_line    0x000f5bca       0x2c ../../../../cpu/wl82/liba/wl_wifi_sta.a(version.z.o)
+ .debug_line    0x000f5bf6       0x2c ../../../../cpu/wl82/liba/zliblite.a(version.z.o)
+ .debug_line    0x000f5c22       0x2c ../../../../cpu/wl82/liba/profile.a(version.z.o)
+ .debug_line    0x000f5c4e       0x2c ../../../../cpu/wl82/liba/stream_media_server.a(version.z.o)
+ .debug_line    0x000f5c7a       0x2c ../../../../cpu/wl82/liba/libmbedtls_2_2_1.a(version.z.o)
+ .debug_line    0x000f5ca6       0x2c ../../../../cpu/wl82/liba/wolfssl.a(version.z.o)
+ .debug_line    0x000f5cd2       0x2c ../../../../cpu/wl82/liba/wpasupplicant.a(version.z.o)
+ .debug_line    0x000f5cfe       0x2c ../../../../cpu/wl82/liba/hsm.a(version.z.o)
+ .debug_line    0x000f5d2a       0x2c ../../../../cpu/wl82/liba/http_cli.a(version.z.o)
+ .debug_line    0x000f5d56       0x2c ../../../../cpu/wl82/liba/http_server.a(version.z.o)
+ .debug_line    0x000f5d82       0x2c ../../../../cpu/wl82/liba/json.a(version.z.o)
+ .debug_line    0x000f5dae       0x2c ../../../../cpu/wl82/liba/libduer-device.a(version.z.o)
+ .debug_line    0x000f5dda       0x2c ../../../../cpu/wl82/liba/network_download.a(version.z.o)
+ .debug_line    0x000f5e06       0x2c ../../../../cpu/wl82/liba/lib_mqtt.a(version.z.o)
+ .debug_line    0x000f5e32       0x2c ../../../../cpu/wl82/liba/libturing.a(version.z.o)
+ .debug_line    0x000f5e5e       0x2c ../../../../cpu/wl82/liba/libdui.a(version.z.o)
+ .debug_line    0x000f5e8a       0x2c ../../../../cpu/wl82/liba/libJlCloud.a(version.z.o)
+ .debug_line    0x000f5eb6       0x2c ../../../../cpu/wl82/liba/libecho_cloud.a(version.z.o)
+ .debug_line    0x000f5ee2       0x2c ../../../../cpu/wl82/liba/libmpeg.a(version.z.o)
+ .debug_line    0x000f5f0e       0x2c ../../../../cpu/wl82/liba/libdcl.a(version.z.o)
+ .debug_line    0x000f5f3a       0x2c ../../../../cpu/wl82/liba/libdlna.a(version.z.o)
+ .debug_line    0x000f5f66       0x2c ../../../../cpu/wl82/liba/libwt.a(version.z.o)
+ .debug_line    0x000f5f92       0x2c ../../../../cpu/wl82/liba/libtencent.a(version.z.o)
+ .debug_line    0x000f5fbe       0x2c ../../../../cpu/wl82/liba/websocket.a(version.z.o)
+ .debug_line    0x000f5fea       0x2c ../../../../cpu/wl82/liba/iperf.a(version.z.o)
+ .debug_line    0x000f6016       0x2c ../../../../cpu/wl82/liba/tmallgenie_todo.a(version.z.o)
+ .debug_line    0x000f6042       0x2c ../../../../cpu/wl82/liba/cJSON.a(version.z.o)
+ .debug_line    0x000f606e       0x2c ../../../../cpu/wl82/liba/ftpserver_new.a(version.z.o)
+ .debug_line    0x000f609a       0x2c ../../../../cpu/wl82/liba/btctrler.a(version.z.o)
+ .debug_line    0x000f60c6       0x2c ../../../../cpu/wl82/liba/btstack.a(version.z.o)
+ .debug_line    0x000f60f2       0x2c ../../../../cpu/wl82/liba/lib_ccm_aes.a(version.z.o)
+ .debug_line    0x000f611e       0x2c ../../../../cpu/wl82/liba/lib_sig_mesh.a(version.z.o)
+ .debug_line    0x000f614a       0x2c ../../../../cpu/wl82/liba/crypto_toolbox_Osize.a(version.z.o)
+ .debug_line    0x000f6176       0x2c ../../../../cpu/wl82/liba/video_dec_server.a(version.z.o)
+ .debug_line    0x000f61a2       0x2c ../../../../cpu/wl82/liba/ui.a(version.z.o)
+ .debug_line    0x000f61ce       0x2c ../../../../cpu/wl82/liba/res.a(version.z.o)
+ .debug_line    0x000f61fa       0x2c ../../../../cpu/wl82/liba/font.a(version.z.o)
+ .debug_line    0x000f6226       0x2c ../../../../cpu/wl82/liba/ui_draw.a(version.z.o)
 
 .debug_aranges  0x00000000       0xa0
  .debug_aranges
